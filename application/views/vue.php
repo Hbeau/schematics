@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p> tu t'appel <?php
     if(isset($nom)) echo $nom;?></p>
 
-<a href="<?php echo site_url('Shematics/test')?>"><?php ?></a>
+<a href="<?php echo site_url('Shematics/test')?>"><?php echo site_url('test')?></a>
 
 <?php
 

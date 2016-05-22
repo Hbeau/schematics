@@ -37,5 +37,4 @@ if ( ! function_exists('img'))
     {
         return '<img src="' . img_url($nom) . '" alt="' . $alt . '" />';
     }
-    
 }
