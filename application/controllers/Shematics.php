@@ -18,24 +18,13 @@ class Shematics extends CI_Controller
 
     public function index()
     {
-        if($this->session->userdata('logged_in'))
-        {
-            $session_data = $this->session->userdata('logged_in');
-            $data['username'] = $session_data['username'];
-            $this->load->view('home_view', $data);
-        }
-        else
-        {
-            //If no session, redirect to login page
-            redirect('login', 'refresh');
-        }
         $this->load->database();
         $result=$this->db->select('id,mail')
                          ->from('user')
                          ->get()
                          ->result();
         var_dump($result);
-       $this->redirect('home','refresh');
+       $this->load->view('vue',$result);
         
     }
     public function acceuil()
@@ -51,12 +40,4 @@ class Shematics extends CI_Controller
 
     }
 
-    public function listSchema(){
-        $this->load->model('schematicModel','schema');
-
-        $data=$this->schema->getInfos();
-
-    }
-
-    public function insert
 }
