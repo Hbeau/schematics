@@ -14,10 +14,17 @@ class Schematics extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('assets');
-        $this->load->library('form_validation');
         $this->load->helper('form');
+
+
+        $this->load->library('form_validation');
+        $this->load->library('parser');
+
         $this->load->model('schematicModel');
         $this->load->model('imageModel');
+
+
+
     }
 
     public function index()
@@ -26,21 +33,14 @@ class Schematics extends CI_Controller
         {
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
-            $this->load->view('home_view', $data);
+            $this->load->view('home', $data);
         }
         else
         {
             //If no session, redirect to login page
             redirect('login', 'refresh');
         }
-        $this->load->database();
-        $result=$this->db->select('id,mail')
-                         ->from('user')
-                         ->get()
-                         ->result();
-        var_dump($result);
-       $this->redirect('home','refresh');
-        
+       $this->listSchema();
     }
     public function acceuil()
 {
@@ -59,7 +59,9 @@ class Schematics extends CI_Controller
         $this->load->model('schematicModel','schema');
 
         $data=$this->schema->getInfos();
-
+        $info= array("data"=>$data);
+     
+        $this->load->view("schema",$info);
     }
 
     public function insert(){

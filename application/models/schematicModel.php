@@ -33,4 +33,7 @@ $data= array(
         }
         return $data;
     }
+    public function getImages(){
+
+    }
 }
