@@ -25,20 +25,24 @@ class Schematics extends CI_Controller
 
 
 
+
     }
 
     public function index()
     {
+       
         if($this->session->userdata('logged_in'))
         {
+
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
             $this->load->view('home', $data);
+
         }
         else
         {
             //If no session, redirect to login page
-            redirect('login', 'refresh');
+          //  redirect('login', 'refresh');
         }
        $this->listSchema();
     }
