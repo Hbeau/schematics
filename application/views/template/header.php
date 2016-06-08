@@ -1,13 +1,13 @@
 <?php $this->load->view('template/head'); ?>
 <header>
-    <div class="navbar">
-        <div class="container">
+    <div class="navbar navbar-inverse">
+        <div class="container header">
             <div class="row logo">
-                <div class="fake-logo"></div>
+                <h1>Schematics</h1>
             </div>
             <div class="row searchline well well-sm">
                 <!--                      Inserer le lien vers home ici-->
-                <a href="#">
+                <a href="<?php echo site_url("/schematics") ?>">
                     <span class="glyphicon glyphicon-home col-lg-1"></span>
                 </a>
                 <div class="searchbar form-group col-lg-8">
@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                         <li><a href="#">Lien 1</a></li>
                         <li><a href="#">Lien 2</a></li>

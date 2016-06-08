@@ -6,6 +6,11 @@ body
     background: #2f2f2f;
 }
 
+h1 {
+    font-family: 'quicksand';
+    font-weight: bold;
+}
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 70%;
@@ -14,18 +19,25 @@ body
 
 
 /* ############ header ############## */
+.navbar {
+    background: url("../img/backgroundHeader.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+}
+.navbar h1 {
+    color:white;
+    font-size: 4em;
+    text-align: center;
+}
 
 .logo {
     margin : 2em auto;
 }
-.fake-logo {
-    width: 10em;
-    height: 6em;
-    background-color: #000000;
-    margin: 0 auto;
-}
 
-.searchline *{
+.searchline a,
+.searchline .searchbar,
+.searchline .dropdown{
     display: inline-block;
     margin: 0 auto;
 }
