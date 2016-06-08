@@ -6,9 +6,25 @@ body
     background: #2f2f2f;
 }
 
+a {
+    color: #649b4b;
+}
+a:active,
+a:hover{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
+}
 h1 {
     font-family: 'quicksand';
     font-weight: bold;
+}
+
+@brand-primary: #649b4b;
+
+input:active {
+    outline: #456c33;
+    box-shadow: #456c33;
 }
 
 .carousel-inner > .item > img,
@@ -52,8 +68,20 @@ h1 {
     margin: 0 auto;
     font-size: 2.2em;
 }
+.searchline .dropdown-menu {
+	left: auto;
+}
+
+/* IMPORTANT */
+
+
+.searchline .dropdown-toggle:active {
+    outline-color: #456c33;
+    outline: auto 5px -webkit-focus-ring;
+}
+
 .header {
-	position: relative;
+    position: relative;
 }
 
 .navbar .round {
@@ -67,6 +95,6 @@ h1 {
     overflow: hidden;
 }
 .navbar .round .glyphicon-user {
-	font-size: 7em;
+    font-size: 7em;
     top: 0.1em;
 }
