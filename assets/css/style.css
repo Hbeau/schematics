@@ -1,4 +1,18 @@
-header{
-    background: #1f1d1d;
-    color: #fff;
+body
+{
+    color: #2f2f2f;
+}
+.login{
+    background: #2f2f2f;
+}
+header {
+    background: url('../img/backgroundHeader.png');
+}
+.schema{
+
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
 }

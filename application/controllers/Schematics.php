@@ -18,33 +18,36 @@ class Schematics extends CI_Controller
 
 
         $this->load->library('form_validation');
-        $this->load->library('parser');
 
         $this->load->model('schematicModel');
+        
         $this->load->model('imageModel');
 
 
-
-
-    }
-
-    public function index()
-    {
-       
         if($this->session->userdata('logged_in'))
         {
 
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
-            $this->load->view('home', $data);
+            //   $this->load->view('home', $data);
+
+            $this->load->view("template/header",$data);
+
 
         }
         else
         {
-            //If no session, redirect to login page
-          //  redirect('login', 'refresh');
+
+            $this->load->view("template/header");
+
         }
-       $this->listSchema();
+
+    }
+
+    public function index()
+    {
+            $this->listSchema();
+
     }
     public function acceuil()
 {

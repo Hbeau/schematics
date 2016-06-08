@@ -54,7 +54,7 @@ public function index(){
            $this->check_database();
            $session_data=$this->session->userdata('logged_in');
            $data['username']=$session_data['username'];
-           $this->load->view('home',$data);
+           redirect('/schematics/', 'refresh');
 
        } else {
            $this->load->view('login');
@@ -84,6 +84,9 @@ public function index(){
                return false;
            }
        }
-
+    public function disconect(){
+        $this->session->sess_destroy();
+        redirect('/schematics/', 'refresh');
+    }
 
 }
