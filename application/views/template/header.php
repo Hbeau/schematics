@@ -7,7 +7,7 @@
                 </div>
                 <div class="row searchline well well-sm">
 
-                    <a href="<?php echo site_url(" /schematics ") ?>" class="col-sm-1">
+                    <a href="<?php echo site_url("/schematics") ?>" class="col-sm-1">
                         <span class="glyphicon glyphicon-home"></span>
                     </a>
 
@@ -23,7 +23,7 @@
                             <li><a href="#">Lien 3</a></li>
                         </ul>
                     </div>
-
+                    
                 </div>
 
                 <div class="round">

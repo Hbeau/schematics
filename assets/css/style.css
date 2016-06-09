@@ -42,10 +42,9 @@ h1 {
     font-weight: bold;
 }
 
-.btn.my-style:visited{
+.btn.my-style:focus{
     outline-color: rgba(59, 157, 42, 0.8);
     outline: auto 5px -webkit-focus-ring;
-    color:red;
 }
 .btn.my-style:active {
     outline-color: rgba(76, 175, 58, 0.8);
@@ -128,7 +127,10 @@ input[type="color"]:focus,
 /* ############## schemas ################# */
 /* # # # # #  modales # # # # # # */
 
-.modal-content
+.modal-content .modal-header h4{
+	text-align: center;
+    text-transform: capitalize;
+}
 
 
 
