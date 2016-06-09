@@ -6,11 +6,12 @@ body
     background: #2f2f2f;
 }
 
-a {
+a{
     color: #649b4b;
 }
 a:active,
-a:hover{
+a:hover,
+a:focus{
     color: #456c33;
     cursor: pointer;
     text-decoration: none;
@@ -18,13 +19,6 @@ a:hover{
 h1 {
     font-family: 'quicksand';
     font-weight: bold;
-}
-
-@brand-primary: #649b4b;
-
-input:active {
-    outline: #456c33;
-    box-shadow: #456c33;
 }
 
 .carousel-inner > .item > img,
@@ -39,6 +33,33 @@ input:active {
     display: inline-block;
     vertical-align: middle;
     float: none;
+}
+.simplebox {
+    outline: none;
+    border: none !imortant;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(76, 175, 58, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
+  outline: 0 none;
 }
 
 /* ############ header ############## */
@@ -69,17 +90,25 @@ input:active {
     font-size: 2.2em;
 }
 .searchline .dropdown-menu {
-	left: auto;
+    left: auto;
 }
 
 /* IMPORTANT */
-
 
 .searchline .dropdown-toggle:active {
     outline-color: #456c33;
     outline: auto 5px -webkit-focus-ring;
 }
-
+/*
+.searchline #searchbar:hover,
+.searchline #searchbar:visited,
+.searchline #searchbar:link,
+.searchline #searchbar:focus
+{
+    border-color: #649b4b;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+}
+*/
 .header {
     position: relative;
 }
