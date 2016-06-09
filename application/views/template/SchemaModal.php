@@ -10,7 +10,6 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <br>
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
@@ -66,7 +65,7 @@
                             class="glyphicon glyphicon-thumbs-up"></span><span id="tumbUp"><?php echo $like["like"]?></span></a>
                     <a id="linkTumbDown" href="<?php echo site_url("Schematics/tumb/".$id."/dislike") ?>"><span
                             class="glyphicon glyphicon-thumbs-down"></span><span id="tumbDown"><?php echo $like["dislike"]?></span></a>
-                    <button type="button" class="btn btn-default">Download</button>
+                    <button type="button" class="btn btn-default my-style">Download</button>
                 </div>
             </div>
 

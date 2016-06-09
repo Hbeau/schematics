@@ -1,15 +1,14 @@
 body
 {
     color: #2f2f2f;
+    font-family: 'dekar';
+    font-size: 18px;
+}
+*:first-letter {
+    text-transform: uppercase;
 }
 .login{
     background: #2f2f2f;
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 70%;
-    margin: auto;
 }
 
 /* ############ Classe générales ########## */
@@ -40,6 +39,10 @@ a:focus{
 h1 {
     font-family: 'quicksand';
     font-weight: bold;
+}
+h4 {
+    font-weight: bold;
+    font-family: 'quicksand';
 }
 
 .btn.my-style:focus{
@@ -126,16 +129,37 @@ input[type="color"]:focus,
 
 /* ############## schemas ################# */
 /* # # # # #  modales # # # # # # */
-
-.modal-content .modal-header h4{
-	text-align: center;
-    text-transform: capitalize;
+.modal-backdrop {
+	background-color: rgba(139, 154, 136, 0.5);
 }
 
+.modal-dialog {
+	min-width: 600px;
+    width: 50%;
+}
 
-
-
-
+.modal-content .modal-header {
+    text-align: center;
+}
+.modal-content .modal-header .modal-title {
+	font-size: 2em;
+}
+.modal-content .modal-body .container {
+    width: 100%;
+}
+.modal-content .modal-body img {
+    width: 100%;
+    height: 25em;
+    object-fit: cover;
+}
+.modal-content .modal-body p{
+    padding-top: 15px;
+    text-align: justify;
+    width: 80%;
+    min-width: 15em;
+    display: block;
+    margin: auto;
+}
 
 
 
