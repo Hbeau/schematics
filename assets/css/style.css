@@ -41,6 +41,8 @@ h1 {
     -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
+
+/* La regle suivante permet de modifer le glow bootstrap bleu en vert */
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,

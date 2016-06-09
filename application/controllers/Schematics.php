@@ -16,13 +16,9 @@ class Schematics extends CI_Controller
         $this->load->helper('assets');
         $this->load->helper('form');
         $this->load->helper('directory');
-
         $this->load->library('form_validation');
-
         $this->load->model('schematicModel');
-        
         $this->load->model('imageModel');
-
 
         if($this->session->userdata('logged_in'))
         {
@@ -48,16 +44,14 @@ class Schematics extends CI_Controller
 
     public function index()
     {
-            $this->listSchema();
-
+        $this->listSchema();
     }
     public function acceuil()
-{
-
-    $data=array();
-    $data["nom"]="jean kevin";
-    $this->load->view('vue',$data);
-}
+    {
+        $data=array();
+        $data["nom"]="jean kevin";
+        $this->load->view('vue',$data);
+    }
     public function test($pseudo='')
     {
         echo 'hello '.$pseudo;
@@ -69,11 +63,11 @@ class Schematics extends CI_Controller
 
         $data=$this->schema->getInfos();
         $info= array("data"=>$data);
-     
+
         $this->load->view("schema",$info);
     }
-    
-    public  function tumb($idSchema,$like){
+
+    public function tumb($idSchema,$like){
         $session_data = $this->session->userdata('logged_in');
         $data['id'] = $session_data['id'];
         $this->load->model('schematicModel','schema');
@@ -89,12 +83,11 @@ class Schematics extends CI_Controller
 
                 $this->schema->tumb($idUser,$idSchema,0);
             }
-            
+
 
         }
         $this->index();
     }
-    
 
     public function insert(){
 
@@ -118,6 +111,6 @@ class Schematics extends CI_Controller
         else{
             $this->load->view('formSchema');
         }
-        
+
     }
 }
