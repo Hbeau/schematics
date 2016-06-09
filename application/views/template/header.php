@@ -28,11 +28,11 @@
 
             <div class="round">
                 <a href="#">
-                    <span class="glyphicon glyphicon-user"></span>
+                    <span class="glyphicon glyphicon-user "></span>
                 </a>
             </div>
         </div>
-        <!--
+
 <span class="name">
 
 <?php
@@ -45,6 +45,6 @@
                    }
 ?>
 </span>
--->
+
     </div>
 </header>

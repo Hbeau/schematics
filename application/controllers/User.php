@@ -57,7 +57,7 @@ public function index(){
            redirect('/schematics/', 'refresh');
 
        } else {
-           $this->load->view('login');
+           redirect('/schematics/', 'refresh');
        }
    }
        public function check_database(){
