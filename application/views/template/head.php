@@ -5,10 +5,14 @@
     <script src="<?php echo site_url("assets/js/script.js");?>"></script>
     <link rel="stylesheet" href="<?php echo site_url("assets/css/style.css")?>">
     <link type='text/css' rel='stylesheet' href="<?php echo site_url("assets/js/jquery.qtip/jquery.qtip.min.css") ?>" />
-    
-    
-<!--    A charger a la fin de la page    -->
-    <script src="<?php echo site_url("assets/js/jquery.qtip/jquery.qtip.min.js") ?>"></script>
 
-    <title>share your imagination</title>
+
+    <!--    A charger a la fin de la page    -->
+
+    <script src="<?php echo site_url("assets/js/jquery.qtip/jquery.qtip.min.js") ?>"></script>
+    <script src="<?php echo site_url('assets/js/qtip-config.js')?>"></script>
+    
+    
+
+    <title>Share your imagination</title>
 </head>
