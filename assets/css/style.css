@@ -98,7 +98,11 @@ input[type="color"]:focus,
 .searchline .searchbar,
 .searchline .dropdown{
     display: inline-block;
-    margin: 0 auto;
+    margin: auto;
+}
+.searchline .searchbar,
+.searchline .dropdown{
+	padding-top: 3px;
 }
 .searchline .glyphicon{
     margin: 0 auto;
@@ -161,7 +165,9 @@ input[type="color"]:focus,
     margin: auto;
 }
 
-
+.modal-content .modal-body .carousel-control:hover{
+    color: rgba(59, 157, 42, 0.8);
+}
 
 
 
