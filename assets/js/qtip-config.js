@@ -16,6 +16,9 @@ $(document).ready(function (){
             my: 'top center',
             at: 'bottom center'
         },
+        show: {
+            event: 'click'  
+        },
         hide: 'unfocus'
     })
 
