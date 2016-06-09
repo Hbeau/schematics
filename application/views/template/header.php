@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="dropdown col-sm-3">
-                        <button class="btn btn-default btn-block dropdown-toggle" type="button" data-toggle="dropdown">Menu <span class="caret"></span></button>
+                        <button class="btn btn-default btn-block dropdown-toggle my-style" type="button" data-toggle="dropdown">Menu <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                             <li><a href="#">Lien 1</a></li>
                             <li><a href="#">Lien 2</a></li>

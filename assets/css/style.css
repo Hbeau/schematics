@@ -6,21 +6,6 @@ body
     background: #2f2f2f;
 }
 
-a{
-    color: #649b4b;
-}
-a:active,
-a:hover,
-a:focus{
-    color: #456c33;
-    cursor: pointer;
-    text-decoration: none;
-}
-h1 {
-    font-family: 'quicksand';
-    font-weight: bold;
-}
-
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 70%;
@@ -41,6 +26,32 @@ h1 {
     -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
+
+a{
+    color: #649b4b;
+}
+a:hover,
+a:active,
+a:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
+}
+h1 {
+    font-family: 'quicksand';
+    font-weight: bold;
+}
+
+.btn.my-style:visited{
+    outline-color: rgba(59, 157, 42, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+    color:red;
+}
+.btn.my-style:active {
+    outline-color: rgba(76, 175, 58, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+}
+
 
 /* La regle suivante permet de modifer le glow bootstrap bleu en vert */
 textarea:focus,
@@ -95,25 +106,9 @@ input[type="color"]:focus,
     left: auto;
 }
 
-/* IMPORTANT */
-
-.searchline .dropdown-toggle:active {
-    outline-color: #456c33;
-    outline: auto 5px -webkit-focus-ring;
-}
-/*
-.searchline #searchbar:hover,
-.searchline #searchbar:visited,
-.searchline #searchbar:link,
-.searchline #searchbar:focus
-{
-    border-color: #649b4b;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
-}
-*/
 .header {
     position: relative;
-}
+} /* Sert a positionner le rond */
 
 .navbar .round {
     width: 7em;
@@ -129,3 +124,40 @@ input[type="color"]:focus,
     font-size: 7em;
     top: 0.1em;
 }
+
+/* ############## schemas ################# */
+/* # # # # #  modales # # # # # # */
+
+.modal-content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
