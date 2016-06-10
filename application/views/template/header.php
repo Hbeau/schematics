@@ -8,30 +8,31 @@
             <div class="row searchline well well-sm">
 
                 <a href="<?php echo site_url("/schematics") ?>" class="col-sm-1">
-                    <span class="glyphicon glyphicon-home"></span>
+                    <button class="btn btn-default btn-block my-style home">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </button>
                 </a>
-
-                <div class="searchbar form-group col-sm-8">
+                <div class="searchbar form-group col-sm-7">
                     <input type="text" class="form-control" id="searchbar">
                 </div>
 
-                <div class="dropdown col-sm-3">
-                    <button class="btn btn-default btn-block dropdown-toggle my-style" type="button" data-toggle="dropdown">Menu <span class="caret"></span></button>
+                <div class="dropdown menu col-sm-1">
+                    <button class="btn btn-default btn-block dropdown-toggle my-style" type="button" data-toggle="dropdown"> 
+                        <img src='<?php echo site_url('assets/img/icon-menu.png') ?>' />
+                    </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Lien 1</a></li>
-                        <li><a href="#">Lien 2</a></li>
-                        <li><a href="#">Lien 3</a></li>
+                        <li><a href="#" class="size18">Lien 1</a></li>
+                        <li><a href="#" class="size18">Lien 2</a></li>
+                        <li><a href="#" class="size18">Lien 3</a></li>
                     </ul>
                 </div>
 
+                <div class="col-sm-3 connexion">
+                    <button class="btn btn-default btn-block my-style size18">Connexion</button>
+                </div>
             </div>
 
-            <div class="round">
-                <a href="#">
-                    <span class="glyphicon glyphicon-user "></span>
-                </a>
-            </div>
-            <div class="round-content">
+            <div class="connexion-content">
                 <span class="name">
                     <?php
     if(isset($username)){

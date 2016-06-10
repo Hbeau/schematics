@@ -1,10 +1,10 @@
 $(document).ready(function (){
 
     
-    $('.round-content').hide()
-    $('.round').qtip({
+    $('.connexion-content').hide()
+    $('.connexion').qtip({
         content: {
-            text: $('.round-content').clone()
+            text: $('.connexion-content').clone()
         },
         style: {
             classes: 'qtip-bootstrap qtip-green',

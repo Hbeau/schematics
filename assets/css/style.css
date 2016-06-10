@@ -10,7 +10,9 @@ body
 .login{
     background: #2f2f2f;
 }
-
+.size18 {
+    font-size: 18px;
+}
 /* ############ Classe générales ########## */
 /* Centre verticalement */
 .vcenter {
@@ -72,9 +74,9 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {   
-  border-color: rgba(76, 175, 58, 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
-  outline: 0 none;
+    border-color: rgba(76, 175, 58, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
+    outline: 0 none;
 }
 
 /* ############ header ############## */
@@ -94,41 +96,50 @@ input[type="color"]:focus,
     margin : 2em auto;
 }
 
+/* PADDING */
+.searchline > *{
+    padding: 6px 6px 0 6px;
+}
+.searchline .searchbar,
+.searchline .dropdown{
+    padding-top: 3px;
+}
 .searchline a,
+.searchline .connexion{
+    padding: 3px 3px 0 3px;
+}
+.searchline .connexion button{
+	padding: 3.5px 0;
+}
+/* ######### */
+.searchline .home,
 .searchline .searchbar,
 .searchline .dropdown{
     display: inline-block;
     margin: auto;
 }
-.searchline .searchbar,
-.searchline .dropdown{
-	padding-top: 3px;
+.searchline a button span{
+    color: #649b4b;
 }
-.searchline .glyphicon{
-    margin: 0 auto;
-    font-size: 2.2em;
+.searchline a button span:hover,
+.searchline a button span:active,
+.searchline a button span:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
 }
 .searchline .dropdown-menu {
     left: auto;
 }
-
-.header {
-    position: relative;
-} /* Sert a positionner le rond */
-
-.navbar .round {
-    width: 7em;
-    height: 7em;
-    background-color: white;
-    border-radius: 5em;
-    position: absolute;
-    top: 2.5em;
-    right: 3em;
-    overflow: hidden;
+.searchline .menu img {
+    width: 15px;
+    height: 15px;
 }
-.navbar .round .glyphicon-user {
-    font-size: 7em;
-    top: 0.1em;
+.searchline a button,
+.searchline .menu button {
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
 }
 
 /* ############## schemas ################# */
@@ -157,7 +168,7 @@ input[type="color"]:focus,
     height: 100%;
 }
 .schema .data .vcenter{
-	height: 5em;
+    height: 5em;
 }
 .schema .data h2 {
     text-align: center;
@@ -169,11 +180,11 @@ input[type="color"]:focus,
 /* # # # # #  modales # # # # # */
 
 .modal-backdrop {
-	background-color: rgba(139, 154, 136, 0.8);
+    background-color: rgba(139, 154, 136, 0.8);
 }
 
 .modal-dialog {
-	min-width: 600px;
+    min-width: 600px;
     width: 50%;
 }
 
@@ -181,7 +192,7 @@ input[type="color"]:focus,
     text-align: center;
 }
 .modal-content .modal-header .modal-title {
-	font-size: 2em;
+    font-size: 2em;
 }
 .modal-content .modal-body .container {
     width: 100%;
