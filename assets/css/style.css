@@ -132,7 +132,12 @@ input[type="color"]:focus,
 }
 
 /* ############## schemas ################# */
-/* # # # # #  modales # # # # # # */
+/* # # # # # schémas # # # # # */
+
+
+
+/* # # # # #  modales # # # # # */
+
 .modal-backdrop {
 	background-color: rgba(139, 154, 136, 0.5);
 }

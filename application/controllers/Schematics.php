@@ -30,7 +30,7 @@ class Schematics extends CI_Controller
             //   $this->load->view('home', $data);
 
             $this->load->view("template/header",$data);
-
+            
 
         }
         else
@@ -59,6 +59,7 @@ class Schematics extends CI_Controller
     }
 
     public function listSchema(){
+        
         $this->load->model('schematicModel','schema');
 
         $data=$this->schema->getInfos();
