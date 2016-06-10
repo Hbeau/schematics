@@ -1,37 +1,22 @@
 body
 {
     color: #2f2f2f;
+    font-family: 'dekar';
+    font-size: 18px;
+}
+*:first-letter {
+    text-transform: uppercase;
 }
 .login{
     background: #2f2f2f;
 }
 
-a{
-    color: #649b4b;
-}
-a:active,
-a:hover,
-a:focus{
-    color: #456c33;
-    cursor: pointer;
-    text-decoration: none;
-}
-h1 {
-    font-family: 'quicksand';
-    font-weight: bold;
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 70%;
-    margin: auto;
-}
-
 /* ############ Classe générales ########## */
 /* Centre verticalement */
 .vcenter {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     float: none;
 }
 .simplebox {
@@ -41,6 +26,34 @@ h1 {
     -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
+
+a{
+    color: #649b4b;
+}
+a:hover,
+a:active,
+a:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
+}
+h1,h2,h3,h4 {
+    font-family: 'quicksand';
+    font-weight: bold;
+}
+
+.btn.my-style:focus{
+    outline-color: rgba(59, 157, 42, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+}
+.btn.my-style:active {
+    outline-color: rgba(76, 175, 58, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+}
+
+/*
+#649b4b
+*/
 
 /* La regle suivante permet de modifer le glow bootstrap bleu en vert */
 textarea:focus,
@@ -85,7 +98,11 @@ input[type="color"]:focus,
 .searchline .searchbar,
 .searchline .dropdown{
     display: inline-block;
-    margin: 0 auto;
+    margin: auto;
+}
+.searchline .searchbar,
+.searchline .dropdown{
+	padding-top: 3px;
 }
 .searchline .glyphicon{
     margin: 0 auto;
@@ -95,25 +112,9 @@ input[type="color"]:focus,
     left: auto;
 }
 
-/* IMPORTANT */
-
-.searchline .dropdown-toggle:active {
-    outline-color: #456c33;
-    outline: auto 5px -webkit-focus-ring;
-}
-/*
-.searchline #searchbar:hover,
-.searchline #searchbar:visited,
-.searchline #searchbar:link,
-.searchline #searchbar:focus
-{
-    border-color: #649b4b;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
-}
-*/
 .header {
     position: relative;
-}
+} /* Sert a positionner le rond */
 
 .navbar .round {
     width: 7em;
@@ -129,3 +130,101 @@ input[type="color"]:focus,
     font-size: 7em;
     top: 0.1em;
 }
+
+/* ############## schemas ################# */
+/* # # # # # schémas # # # # # */
+
+.wrapper-schema {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.schema .data{
+    width: 22em;
+    height: 25em;
+    border-style: none;
+    border-radius: 5px;
+    margin: 0 1em 1em 1em;
+    overflow: hidden;
+    box-shadow: 0 0 5px #649b4b;
+}
+.schema .data .images {
+    width: 100%;
+    height: 20em;
+}
+.schema .data .images img{
+    width: 100%;
+    height: 100%;
+}
+.schema .data .vcenter{
+	height: 5em;
+}
+.schema .data h2 {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+
+/* # # # # #  modales # # # # # */
+
+.modal-backdrop {
+	background-color: rgba(139, 154, 136, 0.8);
+}
+
+.modal-dialog {
+	min-width: 600px;
+    width: 50%;
+}
+
+.modal-content .modal-header {
+    text-align: center;
+}
+.modal-content .modal-header .modal-title {
+	font-size: 2em;
+}
+.modal-content .modal-body .container {
+    width: 100%;
+}
+.modal-content .modal-body img {
+    width: 100%;
+    height: 25em;
+    object-fit: cover;
+}
+.modal-content .modal-body p{
+    padding-top: 15px;
+    text-align: justify;
+    width: 80%;
+    min-width: 15em;
+    display: block;
+    margin: auto;
+}
+
+.modal-content .modal-body .carousel-control:hover{
+    color: rgba(59, 157, 42, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
