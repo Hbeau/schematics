@@ -8,14 +8,30 @@
  */
 class schematicModel extends CI_Model
 {
-    public function insert($name,$description,$size){
+    public function insert($name,$description,$size,$source){
 $data= array(
     "name"=>$name,
     "description"=>$description,
     "size"=>$size
 );
-        $map = directory_map('./uploads');
-        var_dump($map);
+        $this->load->library("ftp");
+        $config['hostname'] = '176.137.63.1';
+        $config['username'] = 'schematics';
+        $config['password'] = '123456';
+        $config['port']="21012";
+        $config['debug']	= TRUE;
+        $this->ftp->connect($config);
+        $list =$this->ftp->list_files('/home/schematics');
+        var_dump($list);
+        if(!in_array(str_replace(' ', '_',"/home/schematics/".$name), $list)){
+
+        $this->ftp->mkdir('/home/schematics/' . str_replace(' ', '_', $name), DIR_WRITE_MODE);
+
+    }
+
+        $this->ftp->upload($source,'/home/schematics/' . str_replace(' ', '_', $name)."/test.zip");
+        $this->ftp->close();
+
 
     }
     public function getShematics(){

@@ -1,4 +1,8 @@
 
+
+<div class="grid">
+
+
 <?php
   
     /*$this->load->view('template/header');*/
@@ -8,3 +12,4 @@ foreach ($data as $item) {
 }
 ?>
 
+</div>

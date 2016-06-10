@@ -15,7 +15,11 @@ class Schematics extends CI_Controller
         $this->load->helper('url');
         $this->load->helper('assets');
         $this->load->helper('form');
-        $this->load->helper('directory');
+
+
+        $config['upload_path'] = 'uploads/';
+        $config['allowed_types'] = '*';
+        $this->load->library("upload",$config);
         $this->load->library('form_validation');
         $this->load->model('schematicModel');
         $this->load->model('imageModel');
@@ -104,7 +108,27 @@ class Schematics extends CI_Controller
             $description=md5($this->security->xss_clean($this->input->post('description')));
             $size=$this->security->xss_clean($this->input->post('size'));
 
-            $this->schematicModel->insert($name,$description,$size);
+
+
+            if($this->upload->do_upload('fileSchema'))
+            {
+
+                $upload_data = $this->upload->data();
+                $fileName = $upload_data['file_name'];
+
+                $source = 'uploads/'.$fileName;
+
+                $this->schematicModel->insert($name,$description,$size,$source);
+
+            }
+
+
+
+
+
+
+
+
 
             $this->listSchema();
         }
