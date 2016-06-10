@@ -14,8 +14,9 @@ body
 /* ############ Classe générales ########## */
 /* Centre verticalement */
 .vcenter {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     float: none;
 }
 .simplebox {
@@ -36,13 +37,9 @@ a:focus{
     cursor: pointer;
     text-decoration: none;
 }
-h1 {
+h1,h2,h3,h4 {
     font-family: 'quicksand';
     font-weight: bold;
-}
-h4 {
-    font-weight: bold;
-    font-family: 'quicksand';
 }
 
 .btn.my-style:focus{
@@ -54,6 +51,9 @@ h4 {
     outline: auto 5px -webkit-focus-ring;
 }
 
+/*
+#649b4b
+*/
 
 /* La regle suivante permet de modifer le glow bootstrap bleu en vert */
 textarea:focus,
@@ -134,12 +134,42 @@ input[type="color"]:focus,
 /* ############## schemas ################# */
 /* # # # # # schémas # # # # # */
 
+.wrapper-schema {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.schema .data{
+    width: 22em;
+    height: 25em;
+    border-style: none;
+    border-radius: 5px;
+    margin: 0 1em 1em 1em;
+    overflow: hidden;
+    box-shadow: 0 0 5px #649b4b;
+}
+.schema .data .images {
+    width: 100%;
+    height: 20em;
+}
+.schema .data .images img{
+    width: 100%;
+    height: 100%;
+}
+.schema .data .vcenter{
+	height: 5em;
+}
+.schema .data h2 {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
 
 
 /* # # # # #  modales # # # # # */
 
 .modal-backdrop {
-	background-color: rgba(139, 154, 136, 0.5);
+	background-color: rgba(139, 154, 136, 0.8);
 }
 
 .modal-dialog {
