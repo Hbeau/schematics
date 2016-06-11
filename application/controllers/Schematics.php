@@ -29,7 +29,7 @@ class Schematics extends CI_Controller
 
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
-
+            $data['avatar']= $session_data['avatar'];
 
             //   $this->load->view('home', $data);
 
@@ -114,11 +114,12 @@ class Schematics extends CI_Controller
             {
 
                 $upload_data = $this->upload->data();
+                var_dump($upload_data);
                 $fileName = $upload_data['file_name'];
 
                 $source = 'uploads/'.$fileName;
 
-                $this->schematicModel->insert($name,$description,$size,$source);
+                $this->schematicModel->insert($name,$description,$upload_data);
 
             }
 

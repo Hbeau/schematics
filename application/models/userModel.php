@@ -10,20 +10,21 @@
     class UserModel extends CI_Model
     {
 
-        public function insert($username, $password, $mail)
+        public function insert($username, $password, $mail,$avatar)
         {
             $data = array(
                 "id" => null,
                 "username" => $username,
                 "password" => $password,
                 "mail" => $mail,
-                "grade" => "nouveau"
+                "grade" => "nouveau",
+                "avatar"=>$avatar
             );
             $this->db->insert("user", $data);
         }
             public function login($username, $password)
             {
-                $query=$this->db->select('id,username,password')
+                $query=$this->db->select('id,username,password,avatar')
                          ->from('user')
                          ->where('username',$username)
                          ->where('password',MD5($password))

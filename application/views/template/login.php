@@ -33,4 +33,5 @@ echo form_password($passdata);
 echo form_submit($submitdata);
 echo form_close();
 ?>
+<button><a href="<?php echo site_url("User/register")?>">register</a></button>
 

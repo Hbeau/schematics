@@ -9,6 +9,7 @@
 
                     <a href="<?php echo site_url(" /schematics ") ?>" class="col-sm-1">
                         <span class="glyphicon glyphicon-home"></span>
+
                     </a>
 
                     <div class="searchbar form-group col-sm-8">
@@ -28,7 +29,13 @@
 
                 <div class="round">
                     <a href="#">
-                        <span class="glyphicon glyphicon-user "></span>
+                       <?php if(isset($avatar)){
+                      echo  "<img src='".site_url("/assets/img/avatar/".$avatar)."' width='100'>";
+                       }
+                       else{
+                         echo '  <span class="glyphicon glyphicon-user "></span>';
+                       }
+                    ?>
                     </a>
                 </div>
                 <div class="round-content">

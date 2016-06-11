@@ -66,7 +66,7 @@
                             class="glyphicon glyphicon-thumbs-up"></span><span id="tumbUp"><?php echo $like["like"]?></span></a>
                     <a id="linkTumbDown" href="<?php echo site_url("Schematics/tumb/".$id."/dislike") ?>"><span
                             class="glyphicon glyphicon-thumbs-down"></span><span id="tumbDown"><?php echo $like["dislike"]?></span></a>
-                    <button type="button" class="btn btn-default">Download</button>
+                    <button type="button" class="btn btn-default"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_",$name)?>.zip">Download</a></button>
                 </div>
             </div>
 
