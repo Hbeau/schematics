@@ -4,7 +4,9 @@
     <script src="<?php echo site_url("assets/bootstrap/js/bootstrap.min.js") ?>"></script>
     <script src="<?php echo site_url("assets/js/script.js");?>"></script>
     <link rel="stylesheet" href="<?php echo site_url("assets/css/style.css")?>">
+    <link rel="stylesheet" href="<?php echo site_url("assets/css/dropzone.css")?>">
     <link type='text/css' rel='stylesheet' href="<?php echo site_url("assets/js/jquery.qtip/jquery.qtip.min.css") ?>" />
+    <script src="<?php echo site_url("/assets/js/Dropzone.js")?>"></script>
 
     <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
 
