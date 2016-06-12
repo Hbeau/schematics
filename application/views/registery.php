@@ -43,7 +43,7 @@ $maildata=array(
 ?>
 <div class="container register">
     <form action="" method="post" >
-
+        <fieldset>
         <?php
 
         //######   username   ############//
@@ -65,7 +65,7 @@ $maildata=array(
         //######   password   ############//
 
 
-        echo '<h4><label for="password" class="size18">Password</label></h4>';
+        echo '<h4><label for="password" class="size18">Mot de passe</label></h4>';
         if(form_error('password')!=null){
 
             echo  '<div class="form-group has-error has-feedback">';
@@ -81,7 +81,7 @@ $maildata=array(
 
         //####  password confirmation  ###//
 
-        echo '<h4><label for="passwordConfirmation">Password</label></h4>';
+        echo '<h4><label for="passwordConfirmation">Répeter le mot de passe</label></h4>';
         if(form_error('passwordConfirmation')!=null){
 
             echo  '<div class="form-group has-error has-feedback">';
@@ -115,17 +115,25 @@ $maildata=array(
 
         <h4>Choisir un avatar :</h4>
 
-        <div class="form-group">
-            <label for="sel-avatar">Choisir l'avatar</label>
-            <select name="sel-avatar" size=5 id="sel-avatar" class="form-control">
-                <?php foreach ($map as $image){
+        <div class="form-group container-fluid">
+            <div class="row">
+                <select name="sel-avatar" size=5 id="sel-avatar" class="form-control col-sm-6">
+                    <?php foreach ($map as $image){
     echo  '
     <option value="'.$image.'"></option>';
 }?>
-            </select>
+                </select>
+                <div class="div col-sm-6">
+                    <p class="text-center">Choisir mon propre avatar</p>
+                    <input type="button" class="btn btn-default btn-block my-style size18" onclick='console.log("hi")' value="Selectionner mon fichier" />
+                </div>
+            </div>
         </div>
+        </fieldset>
 
-        <input class="btn btn-default my-style size18" type="submit"value="Register">
+
+
+        <input class="btn btn-default btn-block my-style size18" type="submit"value="Register">
     </form>
 </div>
 

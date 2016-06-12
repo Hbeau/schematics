@@ -40,8 +40,7 @@ a:focus,
 .form-control:focus,
 option:hover,
 option:active,
-option:focus,
-{
+option:focus{
     color: #456c33;
     cursor: pointer;
     text-decoration: none;
@@ -253,21 +252,26 @@ input[type="color"]:focus,
 /* ############################################ */
 
 .register {
-    width: 540px;
+    max-width: 540px;
 }
 .register select option{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     background-size: 70%;
-    width: 210px;
+    width: 110%;
     height: 210px;
     position: relative;
-    right: 20px;
+    right: 5%;
+}
+.register fieldset {
+    background-color: rgba(181, 216, 145, 0.6);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .register select{
-    width: 200px;
+    width: 50%;
     height: 200px;
     padding: 0px;
 }
