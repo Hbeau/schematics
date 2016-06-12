@@ -163,7 +163,6 @@ input[type="color"]:focus,
     width: 100%;
     height: 20em;
 }
-<<<<<<< HEAD
 .schema .data .images img{
     width: 100%;
     height: 100%;
@@ -216,56 +215,6 @@ input[type="color"]:focus,
     color: rgba(59, 157, 42, 0.8);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-*/
-.grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }
-
-.header {
-    position: relative;
-}
-
-.navbar .round {
-    width: 7em;
-    height: 7em;
-    background-color: white;
-    border-radius: 5em;
-    position: absolute;
-    top: 2.5em;
-    right: 3em;
-    overflow: hidden;
-}
-.navbar .round .glyphicon-user {
-    font-size: 7em;
-    top: 0.1em;
-}
-.schema{
-    background: blanchedalmond;
-}
 .list-group-horizontal .list-group-item {
     display: inline-block;
 }
