@@ -17,7 +17,13 @@ class Schematics extends CI_Controller
         $this->load->helper('form');
 
 
+<<<<<<< HEAD
 
+=======
+        $config['upload_path'] = 'uploads/';
+        $config['allowed_types'] = '*';
+        $this->load->library("upload",$config);
+>>>>>>> master
         $this->load->library('form_validation');
         $this->load->model('schematicModel');
         $this->load->model('imageModel');
@@ -32,7 +38,7 @@ class Schematics extends CI_Controller
             //   $this->load->view('home', $data);
 
             $this->load->view("template/header",$data);
-
+            
 
         }
         else
@@ -61,6 +67,7 @@ class Schematics extends CI_Controller
     }
 
     public function listSchema(){
+        
         $this->load->model('schematicModel','schema');
 
         $data=$this->schema->getInfos();
@@ -125,6 +132,31 @@ class Schematics extends CI_Controller
 
             }
 
+<<<<<<< HEAD
+=======
+
+
+            if($this->upload->do_upload('fileSchema'))
+            {
+
+                $upload_data = $this->upload->data();
+                var_dump($upload_data);
+                $fileName = $upload_data['file_name'];
+
+                $source = 'uploads/'.$fileName;
+
+                $this->schematicModel->insert($name,$description,$upload_data);
+
+            }
+
+
+
+
+
+
+
+
+>>>>>>> master
 
             $this->listSchema();
         } else {

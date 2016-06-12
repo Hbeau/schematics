@@ -1,37 +1,24 @@
 body
 {
     color: #2f2f2f;
+    font-family: 'dekar';
+    font-size: 18px;
+}
+*:first-letter {
+    text-transform: uppercase;
 }
 .login{
     background: #2f2f2f;
 }
-
-a{
-    color: #649b4b;
+.size18 {
+    font-size: 18px;
 }
-a:active,
-a:hover,
-a:focus{
-    color: #456c33;
-    cursor: pointer;
-    text-decoration: none;
-}
-h1 {
-    font-family: 'quicksand';
-    font-weight: bold;
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 70%;
-    margin: auto;
-}
-
 /* ############ Classe générales ########## */
 /* Centre verticalement */
 .vcenter {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     float: none;
 }
 .simplebox {
@@ -41,6 +28,34 @@ h1 {
     -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
+
+a{
+    color: #649b4b;
+}
+a:hover,
+a:active,
+a:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
+}
+h1,h2,h3,h4 {
+    font-family: 'quicksand';
+    font-weight: bold;
+}
+
+.btn.my-style:focus{
+    outline-color: rgba(59, 157, 42, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+}
+.btn.my-style:active {
+    outline-color: rgba(76, 175, 58, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+}
+
+/*
+#649b4b
+*/
 
 /* La regle suivante permet de modifer le glow bootstrap bleu en vert */
 textarea:focus,
@@ -59,9 +74,9 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {   
-  border-color: rgba(76, 175, 58, 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
-  outline: 0 none;
+    border-color: rgba(76, 175, 58, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
+    outline: 0 none;
 }
 
 /* ############ header ############## */
@@ -81,60 +96,74 @@ input[type="color"]:focus,
     margin : 2em auto;
 }
 
+/* PADDING */
+.searchline > *{
+    padding: 6px 6px 0 6px;
+}
+.searchline .searchbar,
+.searchline .dropdown{
+    padding-top: 3px;
+}
 .searchline a,
+.searchline .connexion{
+    padding: 3px 3px 0 3px;
+}
+.searchline .connexion button{
+	padding: 3.5px 0;
+}
+/* ######### */
+.searchline .home,
 .searchline .searchbar,
 .searchline .dropdown{
     display: inline-block;
-    margin: 0 auto;
+    margin: auto;
 }
-.searchline .glyphicon{
-    margin: 0 auto;
-    font-size: 2.2em;
+.searchline a button span{
+    color: #649b4b;
+}
+.searchline a button span:hover,
+.searchline a button span:active,
+.searchline a button span:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
 }
 .searchline .dropdown-menu {
     left: auto;
 }
-
-/* IMPORTANT */
-
-.searchline .dropdown-toggle:active {
-    outline-color: #456c33;
-    outline: auto 5px -webkit-focus-ring;
+.searchline .menu img {
+    width: 15px;
+    height: 15px;
 }
-/*
-.searchline #searchbar:hover,
-.searchline #searchbar:visited,
-.searchline #searchbar:link,
-.searchline #searchbar:focus
-{
-    border-color: #649b4b;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
-}
-*/
-.grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }
-
-.header {
-    position: relative;
+.searchline a button,
+.searchline .menu button {
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
 }
 
-.navbar .round {
-    width: 7em;
-    height: 7em;
-    background-color: white;
-    border-radius: 5em;
-    position: absolute;
-    top: 2.5em;
-    right: 3em;
+/* ############## schemas ################# */
+/* # # # # # schémas # # # # # */
+
+.wrapper-schema {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.schema .data{
+    width: 22em;
+    height: 25em;
+    border-style: none;
+    border-radius: 5px;
+    margin: 0 1em 1em 1em;
     overflow: hidden;
+    box-shadow: 0 0 5px #649b4b;
 }
-.navbar .round .glyphicon-user {
-    font-size: 7em;
-    top: 0.1em;
+.schema .data .images {
+    width: 100%;
+    height: 20em;
 }
-.schema{
-    background: blanchedalmond;
-}
+
 .list-group-horizontal .list-group-item {
     display: inline-block;
 }
@@ -151,3 +180,57 @@ input[type="color"]:focus,
     border-top-right-radius:4px;
     border-bottom-left-radius:0;
 }
+
+.schema .data .images img{
+    width: 100%;
+    height: 100%;
+}
+.schema .data .vcenter{
+    height: 5em;
+}
+.schema .data h2 {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+
+/* # # # # #  modales # # # # # */
+
+.modal-backdrop {
+    background-color: rgba(139, 154, 136, 0.8);
+}
+
+.modal-dialog {
+    min-width: 600px;
+    width: 50%;
+}
+
+.modal-content .modal-header {
+    text-align: center;
+}
+.modal-content .modal-header .modal-title {
+    font-size: 2em;
+}
+.modal-content .modal-body .container {
+    width: 100%;
+}
+.modal-content .modal-body img {
+    width: 100%;
+    height: 25em;
+    object-fit: cover;
+}
+.modal-content .modal-body p{
+    padding-top: 15px;
+    text-align: justify;
+    width: 80%;
+    min-width: 15em;
+    display: block;
+    margin: auto;
+}
+
+.modal-content .modal-body .carousel-control:hover{
+    color: rgba(59, 157, 42, 0.8);
+}
+
+

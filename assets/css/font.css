@@ -120,3 +120,16 @@
 
 }
 
+@font-face {
+    font-family: 'dekar';
+    src: url('../fonts/Dekar.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dekar-light';
+    src: url('../fonts/Dekar Light.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+

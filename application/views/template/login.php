@@ -24,8 +24,8 @@ $passdata=array(
 );
 $submitdata=array(
 
-    'class'=>"btn btn-primary",
-  'value'=>'connexion'
+    'class'=>"btn btn-default my-style",
+    'value'=>'connexion'
 );
 echo form_open('User/login',$formdata);
 echo form_input($userdata);

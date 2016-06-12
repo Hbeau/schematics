@@ -10,14 +10,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <br>
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div id="myCarousel<?php echo $id?>" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                <li data-target="#myCarousel<?php echo $id?>" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel<?php echo $id?>" data-slide-to="1"></li>
+                                <li data-target="#myCarousel<?php echo $id?>" data-slide-to="2"></li>
+                                <li data-target="#myCarousel<?php echo $id?>" data-slide-to="3"></li>
                             </ol>
 
                             <!-- Wrapper for slides -->
@@ -48,11 +47,11 @@
                             </div>
 
                             <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <a class="left carousel-control" href="#myCarousel<?php echo $id?>" role="button" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <a class="right carousel-control" href="#myCarousel<?php echo $id?>" role="button" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -66,7 +65,15 @@
                             class="glyphicon glyphicon-thumbs-up"></span><span id="tumbUp"><?php echo $like["like"]?></span></a>
                     <a id="linkTumbDown" href="<?php echo site_url("Schematics/tumb/".$id."/dislike") ?>"><span
                             class="glyphicon glyphicon-thumbs-down"></span><span id="tumbDown"><?php echo $like["dislike"]?></span></a>
+<<<<<<< HEAD
                     <button type="button" class="btn btn-default"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_",$name)?>.zip">Download</a></button>
+=======
+<<<<<<< HEAD
+                    <button type="button" class="btn btn-default my-style">Download</button>
+=======
+                    <button type="button" class="btn btn-default"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_",$name)?>.zip">Download</a></button>
+>>>>>>> refs/remotes/origin/developpement
+>>>>>>> master
                 </div>
             </div>
 
