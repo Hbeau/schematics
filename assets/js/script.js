@@ -39,6 +39,13 @@ $(function () {
             $(this).parent().removeClass("has-error").removeClass("has-feedback");
         }
     });
+
+
+    $('.list-group-item').on("click",function(){
+        $('.list-group-item').removeClass("active");
+        $(this).addClass("active");
+        $("#avatar").val($(".active").attr("id"));
+    });
 })
 
 

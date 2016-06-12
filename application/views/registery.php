@@ -119,10 +119,21 @@ $maildata=array(
         echo "</div>";
     }
     else {
-        echo form_password($maildata);
+        echo form_input($maildata);
     }
 
     ?>
+<input type="hidden" name="avatar" id="avatar" value="">
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+
+        <div class="list-group list-group-horizontal">
+         <?php foreach ($map as $image){
+             echo  '<a href="#" class="list-group-item "id="'.$image.'"><img src="'.site_url("/assets/img/avatar/".$image).'" width="128"/></a>';
+         }?>
+        </div>
+
+    </div>
 
     <input class="btn btn-info" type="submit"value="register">
 

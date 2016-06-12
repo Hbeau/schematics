@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container-fluid wrapper-schema">
     <?php
     /*$this->load->view('template/header');*/
@@ -10,4 +11,20 @@
         }
     }
     ?>
+=======
+
+
+<div class="grid">
+
+
+<?php
+  
+    /*$this->load->view('template/header');*/
+foreach ($data as $item) {
+  $this->load->view("template/schema",$item);
+  $this->load->view("template/SchemaModal",$item);
+}
+?>
+
+>>>>>>> refs/remotes/origin/developpement
 </div>

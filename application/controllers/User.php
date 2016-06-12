@@ -17,6 +17,7 @@ class User extends CI_Controller
         $this->load->helper('form');
         $this->load->helper('security');
         $this->load->helper('url');
+
         $this->load->model('UserModel');
     }
 public function index(){
@@ -36,14 +37,24 @@ public function index(){
             $username = $this->security->xss_clean($this->input->post('username'));
             $password=md5($this->security->xss_clean($this->input->post('password')));
             $mail=$this->security->xss_clean($this->input->post('mail'));
+            $avatar=$this->security->xss_clean($this->input->post("avatar"));
 
-            $this->UserModel->insert($username,$password,$mail);
+            $this->UserModel->insert($username,$password,$mail,$avatar);
+            redirect('/schematics/', 'refresh');
 
-            $this->load->view('vue');
         }
         else{
-            $this->load->view('registery');
+            $map =$this->loadImages();
+            $data = array("map"=>$map);
+            $this->load->view('registery',$data);
         }
+    }
+
+
+    private function loadImages(){
+        $this->load->helper('directory');
+        $map = directory_map('./assets/img/avatar',true,true);
+        return $map;
     }
    public function login()
    {
@@ -55,10 +66,10 @@ public function index(){
            $this->check_database();
            $session_data=$this->session->userdata('logged_in');
            $data['username']=$session_data['username'];
-           redirect('/schematics/', 'refresh');
+         //  redirect('/schematics/', 'refresh');
 
        } else {
-           redirect('/schematics/', 'refresh');
+           //redirect('/schematics/', 'refresh');
        }
    }
        public function check_database(){
@@ -68,11 +79,11 @@ public function index(){
 
            $result = $this->UserModel->login($username,$password);
            if($result){
-              $sess_array=array();
                foreach ($result as $row){
                    $sess_array= array(
                      'id'=>$row->id,
-                       'username'=>$row->username
+                       'username'=>$row->username,
+                       'avatar'=>$row->avatar
                    );
                    var_dump($sess_array);
                    $this->session->set_userdata('logged_in',$sess_array);

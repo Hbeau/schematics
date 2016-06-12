@@ -8,16 +8,39 @@
  */
 class schematicModel extends CI_Model
 {
-    public function insert($name,$description,$size){
+    public function insert($name,$description,$upload_data){
 $data= array(
     "name"=>$name,
     "description"=>$description,
-    "size"=>$size
+    "size"=>$upload_data["file_size"]
 );
-        $map = directory_map('./uploads');
-        var_dump($map);
+      $this->uploadSchema($name,$upload_data);
+
 
     }
+
+
+    private function uploadSchema($name,$upload_data){
+        $this->load->library("ftp");
+        $config['hostname'] = '176.137.63.1';
+        $config['username'] = 'schematics';
+        $config['password'] = '123456';
+        $config['port']="21012";
+        $config['debug']	= TRUE;
+        $this->ftp->connect($config);
+        $list =$this->ftp->list_files('/home/schematics');
+        var_dump($list);
+        $ftp_path='/home/schematics/' . str_replace(' ', '_', $name);
+        if(!in_array($ftp_path, $list)){
+
+            $this->ftp->mkdir($ftp_path, DIR_WRITE_MODE);
+
+        }
+
+        $this->ftp->upload("uploads/".$upload_data["file_name"],$ftp_path."/".$upload_data["file_name"]);
+        $this->ftp->close();
+    }
+
     public function getShematics(){
         $result=$this->db->select("*")
                 ->from("schematic")
@@ -74,6 +97,17 @@ public function getlike($idSchema){
          $this->db->insert("likedislike",$data);
         }
         
+    }
+
+    public function getfilename($name){
+        $this->load->library("ftp");
+        $config['hostname'] = '176.137.63.1';
+        $config['username'] = 'schematics';
+        $config['password'] = '123456';
+        $config['port']="21012";
+        $config['debug']	= TRUE;
+        $this->ftp->connect($config);
+        $list =$this->ftp->list_files('/home/schematics'.$name);
     }
 
 }

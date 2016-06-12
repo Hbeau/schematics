@@ -35,7 +35,7 @@ echo form_textarea($descdata);
 echo form_error('description');
 echo "<p><span id='char'>0</span> caracteres sur 350</p>";
 echo "</div>";
-echo '<input name="userfile[]" id="userfile" type="file" multiple="" />';
+echo '<input name="fileSchema" id="fileSchema" type="file" multiple="" />';
 echo form_input($sizedata);
 echo form_error('size');
 echo form_submit(array("class"=>"btn btn-info","value"=>"Register"));
