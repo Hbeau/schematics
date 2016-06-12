@@ -4,9 +4,6 @@
             <img src='http://lorempixel.com/350/350' />
         </div>
         <div class="vcenter">
->>>>>>> master
-
-
             <h2>
                 <?php echo $name ?>
             </h2>
