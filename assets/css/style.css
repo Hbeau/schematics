@@ -34,7 +34,14 @@ a{
 }
 a:hover,
 a:active,
-a:focus{
+a:focus,
+.form-control:hover,
+.form-control:active,
+.form-control:focus,
+option:hover,
+option:active,
+option:focus,
+{
     color: #456c33;
     cursor: pointer;
     text-decoration: none;
@@ -73,7 +80,8 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
-.uneditable-input:focus {   
+.uneditable-input:focus,
+.form-control:focus{   
     border-color: rgba(76, 175, 58, 0.8);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
     outline: 0 none;
@@ -141,6 +149,12 @@ input[type="color"]:focus,
     line-height: 34px;
     vertical-align: middle;
 }
+
+/* # # # # # Connexion # # # # # */
+.connexion-qtip a > input{
+	padding : 6px 16.5px;
+}
+
 
 /* ############## schemas ################# */
 /* # # # # # schémas # # # # # */
@@ -234,3 +248,26 @@ input[type="color"]:focus,
 }
 
 
+/* ############################################ */
+/* ############### REGISTER ################### */
+/* ############################################ */
+
+.register {
+    width: 540px;
+}
+.register select option{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-size: 70%;
+    width: 210px;
+    height: 210px;
+    position: relative;
+    right: 20px;
+}
+
+.register select{
+    width: 200px;
+    height: 200px;
+    padding: 0px;
+}
