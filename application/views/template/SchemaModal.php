@@ -1,7 +1,9 @@
 <!-- Modal -->
     <div class="modal fade" id="myModal<?php echo $id?>" role="dialog">
         <div class="modal-dialog">
-
+<?php
+$folder=str_replace(" ","_",$name);
+ ?>
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -21,11 +23,25 @@
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img
-                                        src="https://s-media-cache-ak0.pinimg.com/736x/82/5d/c9/825dc98e825019a34586a4a7854596e2.jpg"
-                                        alt="Chania" width="450" height="345">
-                                </div>
+
+                              <?php  if(!empty($images)){
+
+                                  foreach ($images as $img){
+                                      ?>
+
+                                      <div class="item">
+
+                                          <img
+                                              src=" <?php echo site_url("uploads/schema/image/".$folder."/".$images[0])?>"
+                                              alt="Chania" width="450" height="345">
+                                      </div>
+
+                                      <?php
+                                  }
+                              }?>
+
+
+
 
                                 <div class="item">
                                     <img
@@ -65,15 +81,9 @@
                             class="glyphicon glyphicon-thumbs-up"></span><span id="tumbUp"><?php echo $like["like"]?></span></a>
                     <a id="linkTumbDown" href="<?php echo site_url("Schematics/tumb/".$id."/dislike") ?>"><span
                             class="glyphicon glyphicon-thumbs-down"></span><span id="tumbDown"><?php echo $like["dislike"]?></span></a>
-<<<<<<< HEAD
+
                     <button type="button" class="btn btn-default"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_",$name)?>.zip">Download</a></button>
-=======
-<<<<<<< HEAD
-                    <button type="button" class="btn btn-default my-style">Download</button>
-=======
-                    <button type="button" class="btn btn-default"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_",$name)?>.zip">Download</a></button>
->>>>>>> refs/remotes/origin/developpement
->>>>>>> master
+
                 </div>
             </div>
 
