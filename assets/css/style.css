@@ -4,8 +4,8 @@ body
     font-family: 'dekar';
     font-size: 18px;
 }
-*:first-letter {
-    text-transform: uppercase;
+.capitalize{
+    text-transform: capitalize;
 }
 .login{
     background: #2f2f2f;
@@ -152,6 +152,9 @@ input[type="color"]:focus,
 /* # # # # # Connexion # # # # # */
 .connexion-qtip a > input{
 	padding : 6px 16.5px;
+}
+.connexion-qtip img{
+	width: 70%;
 }
 
 
