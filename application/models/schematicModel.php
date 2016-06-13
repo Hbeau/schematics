@@ -14,13 +14,16 @@ $data= array(
     "description"=>$description,
     "size"=>$upload_data["file_size"]
 );
-      $this->uploadSchema($name,$upload_data);
+     // $this->uploadSchema($name,$upload_data);
 
 
     }
 
 
     private function uploadSchema($name,$upload_data){
+
+
+
         $this->load->library("ftp");
         $config['hostname'] = '176.137.63.1';
         $config['username'] = 'schematics';
@@ -39,6 +42,11 @@ $data= array(
 
         $this->ftp->upload("uploads/".$upload_data["file_name"],$ftp_path."/".$upload_data["file_name"]);
         $this->ftp->close();
+
+
+
+
+
     }
 
     public function getShematics(){
@@ -61,7 +69,14 @@ $data= array(
         }
         return $data;
     }
-    public function getImages(){
+    public function getImages($name){
+
+        $name=str_replace(" ","_",$name);
+
+        $this->load->helper("directory");
+        $map = directory_map("./uploads/schema/image/".$name);
+        return $map;
+
 
     }
 public function getlike($idSchema){

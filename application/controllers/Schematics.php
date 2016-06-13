@@ -17,9 +17,9 @@ class Schematics extends CI_Controller
         $this->load->helper('form');
 
 
-        $config['upload_path'] = 'uploads/';
+    /*    $config['upload_path'] = 'uploads/';
         $config['allowed_types'] = '*';
-        $this->load->library("upload",$config);
+        $this->load->library("upload",$config);*/
         
         $this->load->library('form_validation');
         $this->load->model('schematicModel');
@@ -98,15 +98,15 @@ class Schematics extends CI_Controller
     public function insert()
     {
 
+      
 
         $this->form_validation->set_rules('name', '"Nom du schema"', 'trim|required|min_length[5]|max_length[40]|encode_php_tags');
         $this->form_validation->set_rules('description', '"description"', 'trim|required|min_length[5]|max_length[350]|encode_php_tags');
         $this->form_validation->set_rules('size', '"taille"', 'trim|required|min_length[1]|max_length[3]|numeric|encode_php_tags');
 
-
         if ($this->form_validation->run()) {
 
-            $config['upload_path'] = 'uploads/';
+            $config['upload_path'] = 'uploads/temp';
             $config['allowed_types'] = '*';
             $this->load->library("upload",$config);
 
@@ -117,41 +117,37 @@ class Schematics extends CI_Controller
             $size = $this->security->xss_clean($this->input->post('size'));
 
 
-            if ($this->upload->do_upload('fileSchema')) {
-
-                $upload_data = $this->upload->data();
-                var_dump($upload_data);
-                $fileName = $upload_data['file_name'];
-
-                $source = 'uploads/' . $fileName;
-
-                $this->schematicModel->insert($name, $description, $upload_data);
-
-            }
-
             if($this->upload->do_upload('fileSchema'))
             {
 
                 $upload_data = $this->upload->data();
-                var_dump($upload_data);
+
                 $fileName = $upload_data['file_name'];
 
-                $source = 'uploads/'.$fileName;
+                $source = 'uploads/temp'.$fileName;
+
 
                 $this->schematicModel->insert($name,$description,$upload_data);
 
+                redirect("schematics/insertImage/".str_replace(" ","_",$name),"refresh");
             }
 
-            $this->listSchema();
         } else {
             $this->load->view('formSchema');
         }
     }
 
-    public function uploadImage(){
+    public function insertImage($name){
+
+
+        mkdir("./uploads/schema/image/".$name);
+        $this->load->view("uploadImages",array("name"=>$name));
+    }
+
+    public function uploadImage($rand){
 
         
-        $config['upload_path'] = 'uploads/schema/';
+        $config['upload_path'] = 'uploads/schema/image/'.$rand."/";
         $config['allowed_types'] = '*';
         $this->load->library("upload",$config);
 

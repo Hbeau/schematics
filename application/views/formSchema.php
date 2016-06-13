@@ -26,6 +26,7 @@ $sizedata=array(
 );
 
 
+
 echo form_open_multipart('Schematics/insert');
 echo form_input($namedata);
 echo form_error('name');
@@ -39,9 +40,11 @@ echo "</div>";
 echo '<input name="fileSchema" id="fileSchema" type="file" multiple="" />';
 echo form_input($sizedata);
 echo form_error('size');
+
+
 echo form_submit(array("class"=>"btn btn-info","value"=>"Register"));
 echo form_close();
 
-echo '<form action="'.site_url("Schematics/uploadImage").'" class="dropzone"></form>';
+
 ?>
 

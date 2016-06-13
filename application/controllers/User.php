@@ -66,10 +66,10 @@ public function index(){
            $this->check_database();
            $session_data=$this->session->userdata('logged_in');
            $data['username']=$session_data['username'];
-         //  redirect('/schematics/', 'refresh');
+           redirect('/schematics/', 'refresh');
 
        } else {
-           //redirect('/schematics/', 'refresh');
+           redirect('/schematics/', 'refresh');
        }
    }
        public function check_database(){
