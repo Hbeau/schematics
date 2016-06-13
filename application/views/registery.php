@@ -41,7 +41,7 @@ $maildata=array(
     'value'=>set_value('mail')
 );
 ?>
-<div class="container register">
+<div class="container formulaire">
     <form action="" method="post" >
         <fieldset>
         <?php

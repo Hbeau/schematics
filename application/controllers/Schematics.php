@@ -51,18 +51,6 @@ class Schematics extends CI_Controller
     {
         $this->listSchema();
     }
-    public function acceuil()
-    {
-        $data=array();
-        $data["nom"]="jean kevin";
-        $this->load->view('vue',$data);
-    }
-    public function test($pseudo='')
-    {
-        echo 'hello '.$pseudo;
-
-    }
-
     public function listSchema(){
         
         $this->load->model('schematicModel','schema');
@@ -102,7 +90,6 @@ class Schematics extends CI_Controller
 
         $this->form_validation->set_rules('name', '"Nom du schema"', 'trim|required|min_length[5]|max_length[40]|encode_php_tags');
         $this->form_validation->set_rules('description', '"description"', 'trim|required|min_length[5]|max_length[350]|encode_php_tags');
-        $this->form_validation->set_rules('size', '"taille"', 'trim|required|min_length[1]|max_length[3]|numeric|encode_php_tags');
 
         if ($this->form_validation->run()) {
 
@@ -114,8 +101,6 @@ class Schematics extends CI_Controller
 
             $name = $this->security->xss_clean($this->input->post('name'));
             $description = md5($this->security->xss_clean($this->input->post('description')));
-            $size = $this->security->xss_clean($this->input->post('size'));
-
 
             if($this->upload->do_upload('fileSchema'))
             {

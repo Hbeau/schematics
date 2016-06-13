@@ -34,7 +34,11 @@ a{
 }
 a:hover,
 a:active,
-a:focus,
+a:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
+}
 .form-control:hover,
 .form-control:active,
 .form-control:focus,
@@ -42,7 +46,6 @@ option:hover,
 option:active,
 option:focus{
     color: #456c33;
-    cursor: pointer;
     text-decoration: none;
 }
 h1,h2,h3,h4 {
@@ -254,10 +257,10 @@ input[type="color"]:focus,
 /* ############### REGISTER ################### */
 /* ############################################ */
 
-.register {
+.formulaire {
     max-width: 540px;
 }
-.register select option{
+.formulaire select option{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -267,14 +270,39 @@ input[type="color"]:focus,
     position: relative;
     right: 5%;
 }
-.register fieldset {
+.formulaire fieldset {
     background-color: rgba(181, 216, 145, 0.6);
     border-radius: 5px;
     padding: 10px;
+    z-index: -2;
 }
 
-.register select{
+.formulaire select{
     width: 50%;
     height: 200px;
     padding: 0px;
 }
+/*Permet de cacher le bouton moche d'ajout de fichiers*/
+#fileSchemaHidden{
+    opacity: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 150px;
+}
+
+.fileSchema {
+    position: absolute;
+    width: 490px;
+    height: 150px;
+    bottom: 51px;
+    border-style: dashed;
+    border-width: 5px;
+    z-index: -1;
+}
+
+.fileSchema:after {
+    float: none;
+	clear: both;
+    content: '';
+}
+
