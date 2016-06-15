@@ -81,12 +81,8 @@ $folder=str_replace(" ","_",$name);
                             class="glyphicon glyphicon-thumbs-up"></span><span id="tumbUp"><?php echo $like["like"]?></span></a>
                     <a id="linkTumbDown" href="<?php echo site_url("Schematics/tumb/".$id."/dislike") ?>"><span
                             class="glyphicon glyphicon-thumbs-down"></span><span id="tumbDown"><?php echo $like["dislike"]?></span></a>
-<<<<<<< HEAD
-                    <button type="button" class="btn btn-default my-style size18"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_",$name)?>.zip">Download</a></button>
-=======
 
                     <button type="button" class="btn btn-default"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_",$name)?>.zip">Download</a></button>
->>>>>>> 1ef6e8d1516408e02e9aba613f0405f91b217695
 
                 </div>
             </div>

@@ -32,7 +32,7 @@
             </div>
 
             <div class="connexion-content">
-                <div class="connexion-qtip">
+                <span class="name">
                     <?php
     if(isset($username)){
         echo $username;
@@ -41,7 +41,7 @@
         $this->load->view('template/login.php');
     }
                     ?>
-                </div>
+                </span>
             </div>
         </div>
 

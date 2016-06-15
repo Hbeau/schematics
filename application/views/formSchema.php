@@ -37,6 +37,7 @@ echo form_error('description');
 echo "<p><span id='char'>0</span> caracteres sur 350</p>";
 echo "</div>";
 
+
 echo '<input name="fileSchema" id="fileSchema" type="file" multiple="" />';
 echo form_input($sizedata);
 echo form_error('size');
