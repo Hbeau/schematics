@@ -50,7 +50,7 @@ $data= array(
         $this->ftp->upload("uploads/".$upload_data["file_name"],$ftp_path."/".$upload_data["file_name"]);
         $this->ftp->close();
 
-        
+
     }
 
     public function getShematics($order="date",$offset = 0){
@@ -71,6 +71,7 @@ $data= array(
    }
     public function getInfos($order="date",$offset = 0){
         $data=$this->getShematics($order,$offset);
+        $a=0;
         $i=0;
         foreach ($data as $row){
             $images=$this->getImages($row['name']);

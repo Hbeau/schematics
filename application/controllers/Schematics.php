@@ -58,6 +58,7 @@ class Schematics extends CI_Controller
         
 
         $data=$this->schema->getInfos($filter,$offset);
+        $a=0;
         $info= array("data"=>$data);
         $this->load->view("schema",$info);
     }
