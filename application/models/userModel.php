@@ -10,7 +10,7 @@
     class UserModel extends CI_Model
     {
 
-        public function insert($username, $password, $mail,$avatar)
+        public function insert($username, $password, $mail,$avatar,$ran)
         {
             $data = array(
                 "id" => null,
@@ -18,7 +18,8 @@
                 "password" => $password,
                 "mail" => $mail,
                 "grade" => "guest",
-                "avatar"=>$avatar
+                "avatar"=>$avatar,
+                "confirmation"=>$ran
             );
             $this->db->insert("user", $data);
         }
@@ -53,12 +54,37 @@
             }
 
 
-            public function validateAccout($id){
-                $this->db->set('grade', 'new', FALSE);
-                $this->db->where('id', $id);
-                $this->db->update('user');
+
+            public function validateAccout($id,$ran){
+                $nb=$this->db
+                    ->select("*")
+                    ->from("user")
+                    ->where('confirmation')
+                    ->limit(1)
+                    ->get()
+                    ->row_count();
+                if($nb=$ran) {
+                    $this->db->set('grade', 'new');
+                    $this->db->where('id', $id);
+                    $this->db->update('user');
+                    return true;
+                }
+                return false;
             }
-        
+
+
+        public function getIdByUsername($usr){
+            $query = $this->db
+                ->select("id")
+                ->from("user")
+                ->where('username',$usr)
+                ->limit(1)
+                ->get()
+                ->result();
+            var_dump($query[0]->id);
+            return $query[0]->id;
+        }
+
             public function getSchemaByUserId($id){
                 $query = $this->db
                     ->select("*")
