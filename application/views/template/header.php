@@ -51,7 +51,7 @@
                         $this->load->view('template/login.php');
                     }
                     ?>
-                </span>
+                </div>
             </div>
         </div>
 

@@ -36,7 +36,6 @@ a{
 a:hover,
 a:active,
 a:focus{
-<<<<<<< HEAD
     color: #456c33;
     cursor: pointer;
     text-decoration: none;
@@ -47,8 +46,6 @@ a:focus{
 option:hover,
 option:active,
 option:focus{
-=======
->>>>>>> 25806891de4061f01da6c5af9b000310a1dc318c
     color: #456c33;
     text-decoration: none;
 }
@@ -155,7 +152,7 @@ input[type="color"]:focus,
     vertical-align: middle;
 }
 
-<<<<<<< HEAD
+
 /* # # # # # Connexion # # # # # */
 .connexion-qtip a > input{
 	padding : 6px 16.5px;
@@ -164,9 +161,6 @@ input[type="color"]:focus,
 	width: 70%;
 }
 
-
-=======
->>>>>>> 25806891de4061f01da6c5af9b000310a1dc318c
 /* ############## schemas ################# */
 /* # # # # # schémas # # # # # */
 
@@ -288,6 +282,10 @@ input[type="color"]:focus,
     height: 200px;
     padding: 0px;
 }
+
+
+
+
 /*Permet de cacher le bouton moche d'ajout de fichiers*/
 #fileSchemaHidden{
     opacity: 0;
