@@ -7,6 +7,8 @@ $('document').ready( function () {
     for (var i=1; i<= size ; i++) {
         option = $('.formulaire select option:nth-child('+i+')')
         option.css('background-image','url("/schematics/assets/img/avatar/abstract-'+i+'.png")')
+        console.log(option)
     }
+    console.log("loaded" + size)
     
 })
