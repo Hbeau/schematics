@@ -98,7 +98,7 @@ class User extends CI_Controller
             return false;
         }
     }
-    public function disconect(){
+    public function disconnect(){
         $this->session->sess_destroy();
         redirect('/schematics/', 'refresh');
     }

@@ -46,7 +46,7 @@
                         echo "<p>Mon compte</p>";
                         //LA Ligne suivante ne fonctionne pas, il faut ajouter l'avatar dans la BDD
                         echo "<img src='".site_url("assets/img/avatar/abstract-1.png")."'>";
-                        echo '<a href="'.site_url("User/disconect").'" class="btn"><button class="btn btn-default btn-block my-style size18">Deconnexion</button></a>';
+                        echo '<a href="'.site_url("User/disconnect").'" class="btn"><button class="btn btn-default btn-block my-style size18">Deconnexion</button></a>';
                     }else{
                         $this->load->view('template/login.php');
                     }
