@@ -38,11 +38,13 @@ public function index(){
             $password=md5($this->security->xss_clean($this->input->post('password')));
             $mail=$this->security->xss_clean($this->input->post('mail'));
             $avatar=$this->security->xss_clean($this->input->post("avatar"));
+            $nbr = $this->random();
+            $this->UserModel->insert($username,$password,$mail,$avatar,$nbr);
 
-            $this->UserModel->insert($username,$password,$mail,$avatar);
-            
-            $this->ConfirmationMail();
-            redirect('/schematics/', 'refresh');
+
+            $id= $this->UserModel->getIdByUsername($username);
+            $this->ConfirmationMail($id,$nbr,$mail);
+          //  redirect('/schematics/', 'refresh');
 
         }
         else{
@@ -117,12 +119,16 @@ public function index(){
 
     }
 
-    public function confirmation(){
+    public function confirmation($id,$ran){
+
+        $this->UserModel->validateAccout($id,$ran);
+
+
 
     }
-    private function ConfirmationMail($id){
+    private function ConfirmationMail($id,$ran,$mail){
 
-            $nbr = $this->random();
+
             $this->load->library('email');
             $config['protocol'] = "smtp";
             $config['smtp_host'] = "ssl://smtp.gmail.com";
@@ -135,9 +141,9 @@ public function index(){
 
             $this->email->initialize($config);
             $this->email->from('mail.minecraft.schematics@gmail.com', 'minecraft-schematics');
-            $this->email->to("h.beaucamps@orange.fr");
+            $this->email->to($mail);
             $this->email->subject('--confirmation mail--');
-            $this->email->message(site_url("/user/confirmation/".$nbr));
+            $this->email->message(site_url("/user/confirmation/".$id."/".$ran));
 
             $this->email->send();
             
