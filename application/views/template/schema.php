@@ -1,5 +1,5 @@
 <div class="data">
-    <a href="#" class="schemaTitle " data-toggle="modal" data-info="<?php echo $id?>" data-target="#myModal<?php echo $id?>">
+    <a href="#" class="schemaTitle " data-toggle="modal" data-info="<?php echo $id?>" data-target="#schemaModal<?php echo $id?>">
         <div class="images">
             <img src='http://lorempixel.com/350/350' />
         </div>

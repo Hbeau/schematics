@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="myModal<?php echo $id?>" role="dialog">
+<div class="modal fade" id="schemaModal<?php echo $id?>" role="dialog">
     <div class="modal-dialog">
         <?php
     $folder=str_replace(" ","_",$name);

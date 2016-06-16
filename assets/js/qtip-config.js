@@ -19,7 +19,10 @@ $(document).ready(function (){
         show: {
             event: 'click'  
         },
-        hide: 'unfocus'
+        hide: {
+            event: 'unfocus click mouseout',
+            delay: 1
+        }
     })
 
 })

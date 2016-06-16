@@ -260,6 +260,32 @@ input[type="color"]:focus,
 /* ############### REGISTER ################### */
 /* ############################################ */
 
+/* # # # # # S'enregistrer # # # # # */
+div#registeryModal>.modal-dialog {
+    width: 540px;
+}
+div#registery-content {
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+    border: none;
+    outline: none;
+    width: auto;
+}
+
+div#registery-content>div>div {    
+    padding: 0;
+}
+div#registery-content>.modal-body {
+    padding: 0;
+}
+div#registery-content .modal-header {
+    border-bottom-color: white;
+}
+div#registery-content .modal-footer {
+    border-top-color: white;
+}
+
+
 .formulaire {
     max-width: 540px;
 }
@@ -274,7 +300,7 @@ input[type="color"]:focus,
     right: 5%;
 }
 .formulaire fieldset {
-    background-color: rgba(181, 216, 145, 0.6);
+    background-color: rgba(181, 216, 145, 0.8);
     border-radius: 5px;
     padding: 10px;
     z-index: -2;
@@ -285,7 +311,9 @@ input[type="color"]:focus,
     height: 200px;
     padding: 0px;
 }
-
+.formulaire form {
+    margin-bottom: 0px;
+}
 
 
 

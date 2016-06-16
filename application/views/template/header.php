@@ -38,7 +38,7 @@
             </div>
 
             <div class="connexion-content">
-               
+
                 <div class="connexion-qtip size18 text-center"  style="text-transform:none;">
 
                     <?php
@@ -48,11 +48,16 @@
                         echo "<img src='".site_url("assets/img/avatar/abstract-1.png")."'>";
                         echo '<a href="'.site_url("User/disconnect").'" class="btn"><button class="btn btn-default btn-block my-style size18">Deconnexion</button></a>';
                     }else{
-                        $this->load->view('template/login.php');
+                        $this->load->view('template/login');
                     }
                     ?>
                 </div>
             </div>
+            <?php
+            if(isset($username) == false){
+                $this->load->view('registery');
+            }
+            ?>
         </div>
 
 

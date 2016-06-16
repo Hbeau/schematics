@@ -31,11 +31,9 @@ echo form_open('User/login',$formdata);
 echo form_input($userdata);
 echo form_password($passdata);
 echo form_submit($submitdata);
-echo '
-<a href="'.site_url("User/register").'">
-    <input type="button" class="btn btn-default my-style size18" value="S\'enregister" data-toggle="modal" data-target="#registerModal">
-</a>';
-echo form_close();
-?>
-</button>
 
+echo form_close();
+
+echo '
+<button type="button" class="btn btn-default my-style size18" data-toggle="modal" data-target="#registeryModal">S\'enregistrer</button>';
+?>
