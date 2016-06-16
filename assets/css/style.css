@@ -1,6 +1,7 @@
 body
 {
-   /* background: url("../img/footer_lodyas.png");*/
+    background-image: url(../img/contemporary_china.png);
+    background-repeat: repeat;
     color: #2f2f2f;
     font-family: 'dekar';
     font-size: 18px;
@@ -196,6 +197,7 @@ input[type="color"]:focus,
     margin: 0 1em 1em 1em;
     overflow: hidden;
     box-shadow: 0 0 5px #649b4b;
+    background-color: white;
 }
 .schema .data .images {
     width: 100%;
