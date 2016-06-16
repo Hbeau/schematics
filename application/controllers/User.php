@@ -20,9 +20,9 @@ class User extends CI_Controller
 
         $this->load->model('UserModel');
     }
-    public function index(){
-        $this->register();
-    }
+public function index(){
+    $this->register();
+}
 
     public function register(){
 
@@ -60,47 +60,47 @@ class User extends CI_Controller
         $map = directory_map('./assets/img/avatar',true,true);
         return $map;
     }
-    public function login()
-    {
+   public function login()
+   {
 
-        $this->form_validation->set_rules('username', '"nom d\'utilisateur"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
-        $this->form_validation->set_rules('password', '"mot de passe"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
-        if ($this->form_validation->run()) {
-            //Field validation failed.  User redirected to login page
-            $this->check_database();
-            $session_data=$this->session->userdata('logged_in');
-            $data['username']=$session_data['username'];
-            redirect('/schematics/', 'refresh');
+       $this->form_validation->set_rules('username', '"nom d\'utilisateur"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
+       $this->form_validation->set_rules('password', '"mot de passe"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
+       if ($this->form_validation->run()) {
+           //Field validation failed.  User redirected to login page
+           $this->check_database();
+           $session_data=$this->session->userdata('logged_in');
+           $data['username']=$session_data['username'];
+           redirect('/schematics/', 'refresh');
 
-        } else {
-            redirect('/schematics/', 'refresh');
-        }
-    }
-    public function check_database(){
+       } else {
+           redirect('/schematics/', 'refresh');
+       }
+   }
+       public function check_database(){
 
-        $username=$this->input->post('username');
-        $password=$this->input->post('password');
+           $username=$this->input->post('username');
+           $password=$this->input->post('password');
 
-        $result = $this->UserModel->login($username,$password);
-        if($result){
-            foreach ($result as $row){
-                $sess_array= array(
-                    'id'=>$row->id,
-                    'username'=>$row->username,
-                    'avatar'=>$row->avatar
-                );
-                var_dump($sess_array);
-                $this->session->set_userdata('logged_in',$sess_array);
-            }
+           $result = $this->UserModel->login($username,$password);
+           if($result){
+               foreach ($result as $row){
+                   $sess_array= array(
+                     'id'=>$row->id,
+                       'username'=>$row->username,
+                       'avatar'=>$row->avatar
+                   );
+                   var_dump($sess_array);
+                   $this->session->set_userdata('logged_in',$sess_array);
+               }
 
-            return true;
-        }
-        else{
+               return true;
+           }
+           else{
 
-            return false;
-        }
-    }
-    public function disconnect(){
+               return false;
+           }
+       }
+    public function disconect(){
         $this->session->sess_destroy();
         redirect('/schematics/', 'refresh');
     }
