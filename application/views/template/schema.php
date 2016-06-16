@@ -3,7 +3,7 @@
         <div class="images">
             <img src='http://lorempixel.com/350/350' />
         </div>
-        <div class="vcenter">
+        <div class="vcenter capitalize">
             <h2>
                 <?php echo $name ?>
             </h2>

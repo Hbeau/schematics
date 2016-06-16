@@ -26,22 +26,32 @@
                         <li><a href="#" class="size18">Lien 3</a></li>
                     </ul>
                 </div>
+
                 <div class="col-sm-3 connexion">
-                    <button class="btn btn-default btn-block my-style size18">Connexion</button>
+                    <button class="btn btn-default btn-block my-style size18">
+                        <?php 
+    if(isset($username)){echo $username;} 
+                   else {echo "Connexion";}
+                        ?>
+                    </button>
                 </div>
             </div>
 
             <div class="connexion-content">
-                <span class="name">
+               
+                <div class="connexion-qtip size18 text-center"  style="text-transform:none;">
+
                     <?php
-    if(isset($username)){
-        echo $username;
-        echo "<a href='".site_url("User/disconect")."' class='btn'>deconnexion</a>";
-    }else{
-        $this->load->view('template/login.php');
-    }
+                    if(isset($username)){
+                        echo "<p>Mon compte</p>";
+                        //LA Ligne suivante ne fonctionne pas, il faut ajouter l'avatar dans la BDD
+                        echo "<img src='".site_url("assets/img/avatar/abstract-1.png")."'>";
+                        echo '<a href="'.site_url("User/disconnect").'" class="btn"><button class="btn btn-default btn-block my-style size18">Deconnexion</button></a>';
+                    }else{
+                        $this->load->view('template/login.php');
+                    }
                     ?>
-                </span>
+                </div>
             </div>
         </div>
 

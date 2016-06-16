@@ -7,31 +7,35 @@
  */
 
 $formdata = array(
-    'class' => 'form-inline'
+    'class' => 'form'
 );
 
 $userdata=array(
 
-    'class'=>"form-control",
+    'class'=>"form-control size18",
     'name'=>'username',
     'id'=>'username'
 );
 $passdata=array(
 
-    'class'=>"form-control",
+    'class'=>"form-control size18",
     'name'=>'password',
     'id'=>'password'
 );
 $submitdata=array(
 
-    'class'=>"btn btn-default my-style",
-    'value'=>'connexion'
+    'class'=>"btn btn-default my-style size18",
+    'value'=>'Connexion'
 );
 echo form_open('User/login',$formdata);
 echo form_input($userdata);
 echo form_password($passdata);
 echo form_submit($submitdata);
+echo '
+<a href="'.site_url("User/register").'">
+    <input type="button" class="btn btn-default my-style size18" value="S\'enregister" data-toggle="modal" data-target="#registerModal">
+</a>';
 echo form_close();
 ?>
-<button><a href="<?php echo site_url("User/register")?>">register</a></button>
+</button>
 
