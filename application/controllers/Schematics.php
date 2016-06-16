@@ -23,6 +23,7 @@ class Schematics extends CI_Controller
         
         $this->load->library('form_validation');
         $this->load->model('schematicModel');
+        $this->load->model('UserModel');
         $this->load->model('imageModel');
 
         if($this->session->userdata('logged_in'))
@@ -40,8 +41,9 @@ class Schematics extends CI_Controller
         }
         else
         {
-
-            $this->load->view("template/header");
+            $map= $this->UserModel->loadImages();
+            $data=array("map"=>$map);
+            $this->load->view("template/header",$data);
 
         }
 
