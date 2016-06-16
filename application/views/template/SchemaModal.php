@@ -15,10 +15,10 @@
                     <div id="myCarousel<?php echo $id?>" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                          
+
                             <li data-target="#myCarousel<?php echo $id?>" data-slide-to="0" class="active"></li>
-                           
-                           <?php for($i=1; $i<count($images); $i++){
+
+                            <?php for($i=1; $i<count($images); $i++){
     echo '<li data-target="#myCarousel<?php echo $id?>" data-slide-to="'.$i.'"></li>';
 } ?>
                         </ol>
@@ -58,12 +58,17 @@
             </div>
             <div class="modal-footer">
 
-                <a id="linkTumbUp" href="<?php echo site_url(" Schematics/tumb/ ".$id."/like ") ?>"><span
-                                                                                                          class="glyphicon glyphicon-thumbs-up"></span><span id="tumbUp"><?php echo $like["like"]?></span></a>
-                <a id="linkTumbDown" href="<?php echo site_url(" Schematics/tumb/ ".$id."/dislike ") ?>"><span
-                                                                                                               class="glyphicon glyphicon-thumbs-down"></span><span id="tumbDown"><?php echo $like["dislike"]?></span></a>
-                <button type="button" class="btn btn-default my-style size18"><a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_ ",$name)?>.zip">Download</a></button>
-
+                <a id="linkTumbUp" href="<?php echo site_url(" Schematics/tumb/ ".$id."/like ") ?>">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <span id="tumbUp"><?php echo $like["like"]?></span>
+                </a>
+                <a id="linkTumbDown" href="<?php echo site_url(" Schematics/tumb/ ".$id."/dislike ") ?>">
+                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                    <span id="tumbDown"><?php echo $like["dislike"]?></span>
+                </a>
+                <button type="button" class="btn btn-default my-style size18">
+                    <a href="ftp://173.137.63.1/home/schematics/<?php echo str_replace(" ","_ ",$name)?>.zip">Download</a>
+                </button>
 
             </div>
         </div>

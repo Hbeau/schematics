@@ -1,5 +1,6 @@
 body
 {
+   /* background: url("../img/footer_lodyas.png");*/
     color: #2f2f2f;
     font-family: 'dekar';
     font-size: 18px;
@@ -35,6 +36,7 @@ a{
 a:hover,
 a:active,
 a:focus{
+<<<<<<< HEAD
     color: #456c33;
     cursor: pointer;
     text-decoration: none;
@@ -45,6 +47,8 @@ a:focus{
 option:hover,
 option:active,
 option:focus{
+=======
+>>>>>>> 25806891de4061f01da6c5af9b000310a1dc318c
     color: #456c33;
     text-decoration: none;
 }
@@ -82,8 +86,7 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
-.uneditable-input:focus,
-.form-control:focus{   
+.uneditable-input:focus {   
     border-color: rgba(76, 175, 58, 0.8);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
     outline: 0 none;
@@ -152,6 +155,7 @@ input[type="color"]:focus,
     vertical-align: middle;
 }
 
+<<<<<<< HEAD
 /* # # # # # Connexion # # # # # */
 .connexion-qtip a > input{
 	padding : 6px 16.5px;
@@ -161,6 +165,8 @@ input[type="color"]:focus,
 }
 
 
+=======
+>>>>>>> 25806891de4061f01da6c5af9b000310a1dc318c
 /* ############## schemas ################# */
 /* # # # # # schémas # # # # # */
 
@@ -305,4 +311,3 @@ input[type="color"]:focus,
 	clear: both;
     content: '';
 }
-

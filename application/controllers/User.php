@@ -40,6 +40,8 @@ class User extends CI_Controller
             $avatar=$this->security->xss_clean($this->input->post("avatar"));
 
             $this->UserModel->insert($username,$password,$mail,$avatar);
+            
+            $this->ConfirmationMail();
             redirect('/schematics/', 'refresh');
 
         }
@@ -99,6 +101,64 @@ class User extends CI_Controller
     public function disconect(){
         $this->session->sess_destroy();
         redirect('/schematics/', 'refresh');
+    }
+    public function modifyAccount(){
+
+        $this->load->view("template/header");
+        $session_data = $this->session->userdata('logged_in');
+        $id= $session_data['id'];
+        $user =$this->UserModel->getUserById($id)[0];
+        $schemas= $this->UserModel->getSchemaByUserId($id);
+        $data["user"]=$user;
+        $data["schema"]=$schemas;
+        
+
+        $this->load->view("modifyAccount",$data);
+
+    }
+
+    public function confirmation(){
+
+    }
+    private function ConfirmationMail($id){
+
+            $nbr = $this->random();
+            $this->load->library('email');
+            $config['protocol'] = "smtp";
+            $config['smtp_host'] = "ssl://smtp.gmail.com";
+            $config['smtp_port'] = "465";
+            $config['smtp_user'] = "mail.minecraft.schematics@gmail.com";
+            $config['smtp_pass'] = "AzertY!59000";
+            $config['charset'] = "utf-8";
+            //$config['mailtype'] = "html";
+            $config['newline'] = "\r\n";
+
+            $this->email->initialize($config);
+            $this->email->from('mail.minecraft.schematics@gmail.com', 'minecraft-schematics');
+            $this->email->to("h.beaucamps@orange.fr");
+            $this->email->subject('--confirmation mail--');
+            $this->email->message(site_url("/user/confirmation/".$nbr));
+
+            $this->email->send();
+            
+            $this->load->view("mailConfirmation");
+
+
+    }
+
+
+    public function random(){
+        $charlist="AZRTPQSDFGHJKLMWXCVBN0123456789";
+
+        $phrase="";
+        for($i=0;$i<6;$i++){
+            $random = rand();
+            $modulo= $random%36;
+            $phrase= $phrase.substr($charlist,$modulo,1);
+        }
+
+        return $phrase;
+
     }
 
 }

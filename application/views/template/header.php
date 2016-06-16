@@ -38,7 +38,9 @@
             </div>
 
             <div class="connexion-content">
+               
                 <div class="connexion-qtip size18 text-center"  style="text-transform:none;">
+
                     <?php
                     if(isset($username)){
                         echo "<p>Mon compte</p>";
@@ -49,7 +51,7 @@
                         $this->load->view('template/login.php');
                     }
                     ?>
-                </div>
+                </span>
             </div>
         </div>
 

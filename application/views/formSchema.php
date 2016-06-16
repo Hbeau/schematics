@@ -37,7 +37,6 @@ echo form_error('description');
 echo "<p><span id='char'>0</span> caracteres sur 350</p>";
 echo "</div>";
 
-
 echo '
 <input class="" id="fileSchemaHidden" type="file" multiple=""></input>
 <button class="fileSchema btn btn-block btn-default my-style size18">
