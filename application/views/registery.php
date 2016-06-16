@@ -34,7 +34,7 @@ $maildata=array(
     'id'=>'mail',
     "placeholder"=>"nom.prenom@mail.com",
     'value'=>set_value('mail')
-);
+);    
 ?>
 
 
@@ -127,10 +127,11 @@ $maildata=array(
                             <div class="form-group container-fluid">
                                 <div class="row">
                                     <select name="sel-avatar" size=5 id="sel-avatar" class="form-control col-sm-6">
-                                        <?php foreach ($map as $image){
-    echo  '
+                                        <?php                      
+                                        foreach ($map as $image){
+                                            echo  '
     <option value="'.$image.'"></option>';
-}?>
+                                        }?>
                                     </select>
                                     <div class="div col-sm-6">
                                         <p class="text-center">Choisir mon propre avatar</p>
@@ -140,7 +141,7 @@ $maildata=array(
                             </div>
 
                             <div class="modal-footer">       
-                                <input class="btn btn-default btn-block my-style size18" type="submit"value="S'enregistrer">
+                                <input class="btn btn-default btn-block my-style my-style-green size18" type="submit"value="S'enregistrer">
                             </div>
                         </fieldset>
                     </form>

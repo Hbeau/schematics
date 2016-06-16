@@ -66,6 +66,12 @@ h1,h2,h3,h4 {
     outline: auto 5px -webkit-focus-ring;
 }
 
+.btn.my-style-green {
+    color: white;
+    background-color: #649b4b;
+    border: none;
+}
+
 /*
 #649b4b
 */

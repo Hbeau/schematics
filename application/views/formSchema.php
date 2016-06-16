@@ -48,7 +48,7 @@ Cliquez ou déposez vos fichiers ici pour les ajouter
 <br />';
     
 
-echo form_submit(array("class"=>"btn btn-block btn-default my-style size18","value"=>"Envoyer le schéma"));
+echo form_submit(array("class"=>"btn btn-block btn-default my-style my-style-green size18","value"=>"Envoyer le schéma"));
 echo form_close();
 
 ?>

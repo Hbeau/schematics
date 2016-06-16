@@ -55,11 +55,10 @@
             </div>
             <?php
             if(isset($username) == false){
-                $this->load->view('registery');
+                $this->load ->view('registery');
             }
             ?>
         </div>
-
 
     </div>
 </header>
