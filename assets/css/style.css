@@ -1,0 +1,342 @@
+body
+{
+   /* background: url("../img/footer_lodyas.png");*/
+    color: #2f2f2f;
+    font-family: 'dekar';
+    font-size: 18px;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.login{
+    background: #2f2f2f;
+}
+.size18 {
+    font-size: 18px;
+}
+textarea {
+    resize: none;
+}
+/* ############ Classe générales ########## */
+/* Centre verticalement */
+.vcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: none;
+}
+.simplebox {
+    outline: none;
+    border: none !imortant;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+a{
+    color: #649b4b;
+}
+a:hover,
+a:active,
+a:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
+}
+.form-control:hover,
+.form-control:active,
+.form-control:focus,
+option:hover,
+option:active,
+option:focus{
+    color: #456c33;
+    text-decoration: none;
+}
+h1,h2,h3,h4 {
+    font-family: 'quicksand';
+    font-weight: bold;
+}
+
+.btn.my-style:focus{
+    outline-color: rgba(59, 157, 42, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+}
+.btn.my-style:active {
+    outline-color: rgba(76, 175, 58, 0.8);
+    outline: auto 5px -webkit-focus-ring;
+}
+
+/*
+#649b4b
+*/
+
+/* La regle suivante permet de modifer le glow bootstrap bleu en vert */
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+    border-color: rgba(76, 175, 58, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(73, 167, 55, 0.6);
+    outline: 0 none;
+}
+
+/* ############ header ############## */
+.navbar {
+    background: url("../img/backgroundHeader.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+}
+.navbar h1 {
+    color:white;
+    font-size: 4em;
+    text-align: center;
+}
+
+.navbar .logo {
+    margin : 2em auto;
+}
+
+/* PADDING */
+.searchline > *{
+    padding: 6px 6px 0 6px;
+}
+.searchline .searchbar,
+.searchline .dropdown{
+    padding-top: 3px;
+}
+.searchline a,
+.searchline .connexion{
+    padding: 3px 3px 0 3px;
+}
+.searchline .connexion button{
+	padding: 3.5px 0;
+}
+/* ######### */
+.searchline .home,
+.searchline .searchbar,
+.searchline .dropdown{
+    display: inline-block;
+    margin: auto;
+}
+.searchline a button span{
+    color: #649b4b;
+}
+.searchline a button span:hover,
+.searchline a button span:active,
+.searchline a button span:focus{
+    color: #456c33;
+    cursor: pointer;
+    text-decoration: none;
+}
+.searchline .dropdown-menu {
+    left: auto;
+}
+.searchline .menu img {
+    width: 15px;
+    height: 15px;
+}
+.searchline a button,
+.searchline .menu button {
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+}
+
+
+/* # # # # # Connexion # # # # # */
+.connexion-qtip a > input{
+	padding : 6px 16.5px;
+}
+.connexion-qtip img{
+	width: 70%;
+}
+
+/* ############## schemas ################# */
+/* # # # # # schémas # # # # # */
+
+.wrapper-schema {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.schema .data{
+    width: 22em;
+    height: 25em;
+    border-style: none;
+    border-radius: 5px;
+    margin: 0 1em 1em 1em;
+    overflow: hidden;
+    box-shadow: 0 0 5px #649b4b;
+}
+.schema .data .images {
+    width: 100%;
+    height: 20em;
+}
+
+.list-group-horizontal .list-group-item {
+    display: inline-block;
+}
+.list-group-horizontal .list-group-item {
+    margin-bottom: 0;
+    margin-left:-4px;
+    margin-right: 0;
+}
+.list-group-horizontal .list-group-item:first-child {
+    border-top-right-radius:0;
+    border-bottom-left-radius:4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0;
+}
+
+.schema .data .images img{
+    width: 100%;
+    height: 100%;
+}
+.schema .data .vcenter{
+    height: 5em;
+}
+.schema .data h2 {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+
+/* # # # # #  modales # # # # # */
+
+.modal-backdrop {
+    background-color: rgba(139, 154, 136, 0.8);
+}
+
+.modal-dialog {
+    min-width: 600px;
+    width: 50%;
+}
+
+.modal-content .modal-header {
+    text-align: center;
+}
+.modal-content .modal-header .modal-title {
+    font-size: 2em;
+}
+.modal-content .modal-body .container {
+    width: 100%;
+}
+.modal-content .modal-body img {
+    width: 100%;
+    height: 25em;
+    object-fit: cover;
+}
+.modal-content .modal-body p{
+    padding-top: 15px;
+    text-align: justify;
+    width: 80%;
+    min-width: 15em;
+    display: block;
+    margin: auto;
+}
+
+.modal-content .modal-body .carousel-control:hover{
+    color: rgba(59, 157, 42, 0.8);
+}
+
+
+/* ############################################ */
+/* ############### REGISTER ################### */
+/* ############################################ */
+
+/* # # # # # S'enregistrer # # # # # */
+div#registeryModal>.modal-dialog {
+    width: 540px;
+}
+div#registery-content.modal-content {
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+    border: none;
+    outline: none;
+    width: auto;
+}
+
+div#registery-content>div>div {    
+    padding: 0;
+}
+div#registery-content>.modal-body {
+    padding: 0;
+}
+div#registery-content .modal-header {
+    border-bottom-color: white;
+}
+div#registery-content .modal-footer {
+    border-top-color: white;
+}
+
+/* # # # # # Formulaire # # # # # */
+.formulaire {
+    max-width: 540px;
+}
+.formulaire select option{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-size: 70%;
+    width: 110%;
+    height: 210px;
+    position: relative;
+    right: 5%;
+}
+.formulaire fieldset {
+    background-color: rgba(181, 216, 145, 0.8);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: -2;
+}
+
+.formulaire select{
+    width: 50%;
+    height: 200px;
+    padding: 0px;
+}
+.formulaire form {
+    margin-bottom: 0px;
+}
+
+
+
+/*Permet de cacher le bouton moche d'ajout de fichiers*/
+#fileSchemaHidden{
+    opacity: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 150px;
+}
+
+.fileSchema {
+    position: absolute;
+    width: 490px;
+    height: 150px;
+    bottom: 110px;
+    border-style: dashed;
+    border-width: 5px;
+    z-index: -1;
+}
+
+.fileSchema:after {
+    float: none;
+	clear: both;
+    content: '';
+}
