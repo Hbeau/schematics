@@ -44,7 +44,6 @@ $maildata=array(
 
         <div class="modal-content" id="registery-content">
 
-
             <div class="modal-body">
 
                 <div class="container formulaire modal-content">

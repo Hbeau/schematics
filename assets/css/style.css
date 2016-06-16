@@ -264,7 +264,7 @@ input[type="color"]:focus,
 div#registeryModal>.modal-dialog {
     width: 540px;
 }
-div#registery-content {
+div#registery-content.modal-content {
     background-color: rgba(0,0,0,0);
     box-shadow: none;
     border: none;
@@ -285,7 +285,7 @@ div#registery-content .modal-footer {
     border-top-color: white;
 }
 
-
+/* # # # # # Formulaire # # # # # */
 .formulaire {
     max-width: 540px;
 }
