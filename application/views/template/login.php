@@ -33,8 +33,8 @@ echo form_password($passdata);
 echo form_submit($submitdata);
 echo '
 <a href="'.site_url("User/register").'">
-    <input type="button" class="btn btn-default my-style size18" value="S\'enregister">
-    </a>';
+    <input type="button" class="btn btn-default my-style size18" value="S\'enregister" data-toggle="modal" data-target="#registerModal">
+</a>';
 echo form_close();
 ?>
 </button>

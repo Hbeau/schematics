@@ -14,6 +14,9 @@ body
 .size18 {
     font-size: 18px;
 }
+textarea {
+    resize: none;
+}
 /* ############ Classe générales ########## */
 /* Centre verticalement */
 .vcenter {
@@ -298,7 +301,7 @@ input[type="color"]:focus,
     position: absolute;
     width: 490px;
     height: 150px;
-    bottom: 51px;
+    bottom: 110px;
     border-style: dashed;
     border-width: 5px;
     z-index: -1;
