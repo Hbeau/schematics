@@ -55,6 +55,13 @@
 
 
 
+        public function loadImages(){
+            $this->load->helper('directory');
+            $map = directory_map('./assets/img/avatar',true,true);
+            return $map;
+        }
+
+
             public function validateAccout($id,$ran){
                 $nb=$this->db
                     ->select("*")

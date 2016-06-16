@@ -47,7 +47,7 @@ $maildata=array(
             <div class="modal-body">
 
                 <div class="container formulaire modal-content">
-                    <form action="" method="post" >
+                    <form action="<?php echo site_url("User/register")?>" method="post" >
                         <fieldset>
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
