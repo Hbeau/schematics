@@ -167,7 +167,17 @@ input[type="color"]:focus,
 	padding : 6px 16.5px;
 }
 .connexion-qtip img{
-	width: 70%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(59, 157, 42, 0.8);
+    border-top: 1px solid rgba(59, 157, 42, 0.8);
+	width: 100%;
+}
+.connexion-content {
+    display: none;
+}
+.connexion-content a{
+	width: 100%;
 }
 
 /* ############## schemas ################# */
@@ -175,8 +185,8 @@ input[type="color"]:focus,
 
 .wrapper-schema {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .schema .data{
     width: 22em;

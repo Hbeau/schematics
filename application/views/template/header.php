@@ -43,9 +43,11 @@
 
                     <?php
                     if(isset($username)){
-                        echo "<p>Mon compte</p>";
+                        echo "<h4>Mon compte</h4>";
                         //LA Ligne suivante ne fonctionne pas, il faut ajouter l'avatar dans la BDD
+                        echo '<span class="separation"></span>';
                         echo "<img src='".site_url("assets/img/avatar/abstract-1.png")."'>";
+                        echo '<a href="'.site_url("Schematics/insert").'" class="btn"><button class="btn btn-default btn-block my-style my-style-green size18">Ajouter un schéma</button></a>';
                         echo '<a href="'.site_url("User/disconnect").'" class="btn"><button class="btn btn-default btn-block my-style size18">Deconnexion</button></a>';
                     }else{
                         $this->load->view('template/login');

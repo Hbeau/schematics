@@ -1,7 +1,6 @@
-$(document).ready(function (){
 
-    
-    $('.connexion-content').hide()
+
+$(document).ready(function (){
     $('.connexion').qtip({
         content: {
             text: $('.connexion-content').clone()
