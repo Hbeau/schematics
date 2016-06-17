@@ -8,21 +8,24 @@
  */
 class schematicModel extends CI_Model
 {
-    public function insert($name,$description,$upload_data){
+    public function insert($name,$description,$upload_data,$user){
 
-
+echo "test";
         $date = new DateTime();
 
 $data= array(
     "name"=>$name,
     "description"=>$description,
     "size"=>$upload_data["file_size"],
-    "data"=>$date->format('Y-m-d')
+    "date"=>$date->format('Y-m-d'),
+    "idUser"=>$user
 );
         var_dump($data);
-      $this->uploadSchema($name,$upload_data);
 
         $this->db->insert("schematic",$data);
+      $this->uploadSchema($name,$upload_data);
+
+
 
     }
 
@@ -30,27 +33,31 @@ $data= array(
     private function uploadSchema($name,$upload_data){
 
 
+try {
+    $this->load->library("ftp");
+    $config['hostname'] = '176.137.63.1';
+    $config['username'] = 'schematics';
+    $config['password'] = '123456';
+    $config['port'] = "21012";
+    $config['debug'] = TRUE;
+    $this->ftp->connect($config);
+    $list = $this->ftp->list_files('/home/schematics');
+    var_dump($list);
+    $ftp_path = '/home/schematics/' . str_replace(' ', '_', $name);
+    if (!in_array($ftp_path, $list)) {
 
-        $this->load->library("ftp");
-        $config['hostname'] = '176.137.63.1';
-        $config['username'] = 'schematics';
-        $config['password'] = '123456';
-        $config['port']="21012";
-        $config['debug']	= TRUE;
-        $this->ftp->connect($config);
-        $list =$this->ftp->list_files('/home/schematics');
-        var_dump($list);
-        $ftp_path='/home/schematics/' . str_replace(' ', '_', $name);
-        if(!in_array($ftp_path, $list)){
+        $this->ftp->mkdir($ftp_path, DIR_WRITE_MODE);
 
-            $this->ftp->mkdir($ftp_path, DIR_WRITE_MODE);
+    }
 
-        }
+    echo "./uploads/temp/" . $upload_data["file_name"];
+    $this->ftp->upload("./uploads/temp/" . $upload_data["file_name"], $ftp_path . "/" . $upload_data["file_name"]);
+    $this->ftp->close();
 
-        $this->ftp->upload("uploads/".$upload_data["file_name"],$ftp_path."/".$upload_data["file_name"]);
-        $this->ftp->close();
+}
+catch (Exception $e){
 
-
+}
     }
 
     public function getShematics($order="date",$offset = 0){
