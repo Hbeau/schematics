@@ -1,7 +1,6 @@
 body
 {
-    background-image: url(../img/contemporary_china.png);
-    background-repeat: repeat;
+   /* background: url("../img/footer_lodyas.png");*/
     color: #2f2f2f;
     font-family: 'dekar';
     font-size: 18px;
@@ -65,12 +64,6 @@ h1,h2,h3,h4 {
 .btn.my-style:active {
     outline-color: rgba(76, 175, 58, 0.8);
     outline: auto 5px -webkit-focus-ring;
-}
-
-.btn.my-style-green {
-    color: white;
-    background-color: #649b4b;
-    border: none;
 }
 
 /*
@@ -168,17 +161,7 @@ input[type="color"]:focus,
 	padding : 6px 16.5px;
 }
 .connexion-qtip img{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(59, 157, 42, 0.8);
-    border-top: 1px solid rgba(59, 157, 42, 0.8);
-	width: 100%;
-}
-.connexion-content {
-    display: none;
-}
-.connexion-content a{
-	width: 100%;
+	width: 70%;
 }
 
 /* ############## schemas ################# */
@@ -186,8 +169,8 @@ input[type="color"]:focus,
 
 .wrapper-schema {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .schema .data{
     width: 22em;
@@ -197,7 +180,6 @@ input[type="color"]:focus,
     margin: 0 1em 1em 1em;
     overflow: hidden;
     box-shadow: 0 0 5px #649b4b;
-    background-color: white;
 }
 .schema .data .images {
     width: 100%;
@@ -318,7 +300,7 @@ div#registery-content .modal-footer {
     right: 5%;
 }
 .formulaire fieldset {
-    background-color: rgba(181, 216, 145, 0.8);
+    background-color: rgba(98,178,81, 0.8);
     border-radius: 5px;
     padding: 10px;
     z-index: -2;

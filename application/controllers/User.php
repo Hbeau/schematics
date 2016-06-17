@@ -20,9 +20,9 @@ class User extends CI_Controller
 
         $this->load->model('UserModel');
     }
-    public function index(){
-        $this->register();
-    }
+public function index(){
+    $this->register();
+}
 
     public function register(){
 
@@ -44,7 +44,7 @@ class User extends CI_Controller
 
             $id= $this->UserModel->getIdByUsername($username);
             $this->ConfirmationMail($id,$nbr,$mail);
-            //  redirect('/schematics/', 'refresh');
+          //  redirect('/schematics/', 'refresh');
 
         }
         else{
@@ -60,46 +60,46 @@ class User extends CI_Controller
         $map = directory_map('./assets/img/avatar',true,true);
         return $map;
     }
-    public function login()
-    {
+   public function login()
+   {
 
-        $this->form_validation->set_rules('username', '"nom d\'utilisateur"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
-        $this->form_validation->set_rules('password', '"mot de passe"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
-        if ($this->form_validation->run()) {
-            //Field validation failed.  User redirected to login page
-            $this->check_database();
-            $session_data=$this->session->userdata('logged_in');
-            $data['username']=$session_data['username'];
-            redirect('/schematics/', 'refresh');
+       $this->form_validation->set_rules('username', '"nom d\'utilisateur"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
+       $this->form_validation->set_rules('password', '"mot de passe"', 'trim|required|max_length[40]|alpha_dash|encode_php_tags');
+       if ($this->form_validation->run()) {
+           //Field validation failed.  User redirected to login page
+           $this->check_database();
+           $session_data=$this->session->userdata('logged_in');
+           $data['username']=$session_data['username'];
+           redirect('/schematics/', 'refresh');
 
-        } else {
-            redirect('/schematics/', 'refresh');
-        }
-    }
-    public function check_database(){
+       } else {
+           redirect('/schematics/', 'refresh');
+       }
+   }
+       public function check_database(){
 
-        $username=$this->input->post('username');
-        $password=$this->input->post('password');
+           $username=$this->input->post('username');
+           $password=$this->input->post('password');
 
-        $result = $this->UserModel->login($username,$password);
-        if($result){
-            foreach ($result as $row){
-                $sess_array= array(
-                    'id'=>$row->id,
-                    'username'=>$row->username,
-                    'avatar'=>$row->avatar
-                );
-                var_dump($sess_array);
-                $this->session->set_userdata('logged_in',$sess_array);
-            }
+           $result = $this->UserModel->login($username,$password);
+           if($result){
+               foreach ($result as $row){
+                   $sess_array= array(
+                     'id'=>$row->id,
+                       'username'=>$row->username,
+                       'avatar'=>$row->avatar
+                   );
+                   var_dump($sess_array);
+                   $this->session->set_userdata('logged_in',$sess_array);
+               }
 
-            return true;
-        }
-        else{
+               return true;
+           }
+           else{
 
-            return false;
-        }
-    }
+               return false;
+           }
+       }
     public function disconnect(){
         $this->session->sess_destroy();
         redirect('/schematics/', 'refresh');
@@ -113,7 +113,7 @@ class User extends CI_Controller
         $schemas= $this->UserModel->getSchemaByUserId($id);
         $data["user"]=$user;
         $data["schema"]=$schemas;
-
+        
 
         $this->load->view("modifyAccount",$data);
 
@@ -129,25 +129,25 @@ class User extends CI_Controller
     private function ConfirmationMail($id,$ran,$mail){
 
 
-        $this->load->library('email');
-        $config['protocol'] = "smtp";
-        $config['smtp_host'] = "ssl://smtp.gmail.com";
-        $config['smtp_port'] = "465";
-        $config['smtp_user'] = "mail.minecraft.schematics@gmail.com";
-        $config['smtp_pass'] = "AzertY!59000";
-        $config['charset'] = "utf-8";
-        //$config['mailtype'] = "html";
-        $config['newline'] = "\r\n";
+            $this->load->library('email');
+            $config['protocol'] = "smtp";
+            $config['smtp_host'] = "ssl://smtp.gmail.com";
+            $config['smtp_port'] = "465";
+            $config['smtp_user'] = "mail.minecraft.schematics@gmail.com";
+            $config['smtp_pass'] = "AzertY!59000";
+            $config['charset'] = "utf-8";
+            //$config['mailtype'] = "html";
+            $config['newline'] = "\r\n";
 
-        $this->email->initialize($config);
-        $this->email->from('mail.minecraft.schematics@gmail.com', 'minecraft-schematics');
-        $this->email->to($mail);
-        $this->email->subject('--confirmation mail--');
-        $this->email->message(site_url("/user/confirmation/".$id."/".$ran));
+            $this->email->initialize($config);
+            $this->email->from('mail.minecraft.schematics@gmail.com', 'minecraft-schematics');
+            $this->email->to($mail);
+            $this->email->subject('--confirmation mail--');
+            $this->email->message(site_url("/user/confirmation/".$id."/".$ran));
 
-        $this->email->send();
-
-        $this->load->view("mailConfirmation");
+            $this->email->send();
+            
+            $this->load->view("mailConfirmation");
 
 
     }

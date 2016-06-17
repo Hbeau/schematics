@@ -24,7 +24,7 @@ $passdata=array(
 );
 $submitdata=array(
 
-    'class'=>"btn btn-default btn-block my-style size18",
+    'class'=>"btn btn-default my-style size18",
     'value'=>'Connexion'
 );
 echo form_open('User/login',$formdata);
@@ -35,5 +35,5 @@ echo form_submit($submitdata);
 echo form_close();
 
 echo '
-<button type="button" class="btn btn-default btn-block my-style my-style-green size18" data-toggle="modal" data-target="#registeryModal">S\'enregistrer</button>';
+<button type="button" class="btn btn-default my-style size18" data-toggle="modal" data-target="#registeryModal">S\'enregistrer</button>';
 ?>

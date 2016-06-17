@@ -37,18 +37,9 @@ echo form_error('description');
 echo "<p><span id='char'>0</span> caracteres sur 350</p>";
 echo "</div>";
 
-echo '
-<input class="" id="fileSchemaHidden" type="file" multiple=""></input>
-<button class="fileSchema btn btn-block btn-default my-style size18">
+echo ' <input type = "file" name = "fileSchema" size = "20" /> ';
 
-Cliquez ou déposez vos fichiers ici pour les ajouter
-
-</button>
-
-<br />';
-    
-
-echo form_submit(array("class"=>"btn btn-block btn-default my-style my-style-green size18","value"=>"Envoyer le schéma"));
+echo form_submit(array("class"=>"btn btn-block btn-default my-style size18","value"=>"Envoyer le schéma"));
 echo form_close();
 
 ?>
