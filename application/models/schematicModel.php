@@ -85,6 +85,8 @@ catch (Exception $e){
             $like=$this->getlike($row['id']);
             $data[$i]['like']=$like;
             $data[$i]['images']=$images;
+            $data[$i]['author']=$this->getAutor($row['idUser']);
+            $data[$i]['category']=$this->getCategory($row['id']);
             $i++;
         }
         return $data;
@@ -96,9 +98,18 @@ catch (Exception $e){
         $this->load->helper("directory");
         $map = directory_map("./uploads/schema/image/".$name);
         return $map;
-
-
     }
+
+    public function getCategory($id){
+        return $this->db->select("*")
+                            ->from("category")
+                            ->join("schemacategory","schemacategory.idCategory=category.id")
+                            ->where("schemacategory.idShema",$id)
+                            ->get()
+                            ->result();
+    }
+
+
 public function getlike($idSchema){
     $dislike =$this->db->select("*")
         ->from("likedislike")
@@ -115,6 +126,13 @@ public function getlike($idSchema){
 
     return array("like"=>$like,"dislike"=>$dislike);
 }
+
+
+    public function  getAutor($id){
+        $this->load->model("userModel");
+        return $this->userModel->getUserById($id);
+
+    }
     public function tumb($idSchema,$idUser,$up){
      
         $data=array(
