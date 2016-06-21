@@ -8,9 +8,9 @@
  */
 class schematicModel extends CI_Model
 {
-    public function insert($name,$description,$upload_data,$user){
+    public function insert($name,$description,$upload_data,$user,$cat){
 
-echo "test";
+
         $date = new DateTime();
 
 $data= array(
@@ -23,12 +23,35 @@ $data= array(
         var_dump($data);
 
         $this->db->insert("schematic",$data);
+        $id=$this->db->select_max("id","schematics");
+
+
+
+        try{
+            $category= json_decode($cat);
+            foreach($category as $uneCategory){
+                $this->bindCategory($id,$uneCategory);
+            }
+        }
+        catch (Exception $e){
+
+        }
       $this->uploadSchema($name,$upload_data);
+
 
 
 
     }
 
+
+private function bindCategory($schemaId,$catId){
+
+    $data = array(
+      "idSchema"=>$schemaId,
+        "idCategory"=>$catId
+    );
+    $this->db->insert("schemacatory",$data);
+}
 
     private function uploadSchema($name,$upload_data){
 
@@ -98,6 +121,12 @@ catch (Exception $e){
         $this->load->helper("directory");
         $map = directory_map("./uploads/schema/image/".$name);
         return $map;
+    }
+
+
+    function getAllCategory(){
+        return $this->db->select("*")->from("category")->get()->result_array();
+
     }
 
     public function getCategory($id){

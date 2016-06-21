@@ -93,6 +93,7 @@ class Schematics extends CI_Controller
             $session_data = $this->session->userdata('logged_in');
             $userId=$session_data["id"];
 
+            $data= $this->schematicModel->getAllCategory();
 
             $this->form_validation->set_rules('name', '"Nom du schema"', 'trim|required|min_length[5]|max_length[40]|encode_php_tags');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|min_length[5]|max_length[350]|encode_php_tags');
@@ -106,6 +107,7 @@ class Schematics extends CI_Controller
 
                 $name = $this->security->xss_clean($this->input->post('name'));
                 $description = md5($this->security->xss_clean($this->input->post('description')));
+                $category =md5($this->securty->xss_clean($this->input->post('categorie')));
 
                 if ($this->upload->do_upload('fileSchema')) {
 
@@ -116,13 +118,13 @@ class Schematics extends CI_Controller
                     $source = 'uploads/temp' . $fileName;
 
 
-                    $this->schematicModel->insert($name, $description, $upload_data,$userId);
+                    $this->schematicModel->insert($name, $description, $upload_data,$userId,$category);
 
                     redirect("schematics/insertImage/" . str_replace(" ", "_", $name), "refresh");
                 }
 
             } else {
-                $this->load->view('formSchema');
+                $this->load->view('formSchema',array("data"=>$data));
             }
         }
         else{

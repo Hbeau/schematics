@@ -1,3 +1,9 @@
+
+<script>
+    var aviableCategory= <?php echo json_encode($data);?>;
+    console.log(aviableCategory);
+</script>
+
 <div class="container formulaire">
 <fieldset>
 
@@ -22,6 +28,10 @@ $descdata=array(
     'id'=>'description',
     'value'=>set_value("description")
 );
+$catdata =array(
+    "name"=>"category",
+    "id"=>"category"
+);
 
 echo form_open_multipart('Schematics/insert');
     
@@ -37,6 +47,9 @@ echo form_error('description');
 echo "<p><span id='char'>0</span> caracteres sur 350</p>";
 echo "</div>";
 
+//echo "<input type='text' id='category' class='form-control'>";
+
+echo '<input type="hidden" id="category" name="category">';
 echo ' <input type = "file" name = "fileSchema" size = "20" /> ';
 
 echo form_submit(array("class"=>"btn btn-block btn-default my-style size18","value"=>"Envoyer le schéma"));

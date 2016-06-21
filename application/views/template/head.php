@@ -3,10 +3,12 @@
     <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/css/bootstrap.min.css") ?>" type="text/css">
     <script src="<?php echo site_url("assets/bootstrap/js/bootstrap.min.js") ?>"></script>
     <script src="<?php echo site_url("assets/js/script.js");?>"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="<?php echo site_url("assets/css/style.css")?>">
     <link rel="stylesheet" href="<?php echo site_url("assets/css/dropzone.css")?>">
     <link type='text/css' rel='stylesheet' href="<?php echo site_url("assets/js/jquery.qtip/jquery.qtip.min.css") ?>" />
     <link type="text/css" rel="stylesheet" href="<?php echo site_url("assets/css/notie.css") ?>">
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     
     <script src="<?php echo site_url("assets/js/Dropzone.js")?>"></script>
     <script src="<?php echo site_url("assets/js/notie.js") ?>"></script>

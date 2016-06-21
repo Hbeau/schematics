@@ -2,7 +2,21 @@
  * Created by hugo on 08/06/2016.
  */
 $(function () {
+
+
+
+
+    var tags = Array();
+
+
+  /*  for (var i=0; i<aviableCategory.length;i++){
+        tags[i]= aviableCategory[i].name;
+    }*/
+
 /*
+
+
+
     $(".schemaTitle").on("click",function () {
         var id =$(this).attr("data-info");
         var item = findInArray(id);
@@ -39,6 +53,10 @@ $(function () {
             $(this).parent().removeClass("has-error").removeClass("has-feedback");
         }
     });
+$('#category').autocomplete({
+    source:tags
+});
+
 
 
     $('.list-group-item').on("click",function(){
